@@ -1,183 +1,100 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Young Bulls U13 — детская баскетбольная команда</title>
-<meta name="description" content="Young Bulls U13: баскетбольная команда для детей 12–13 лет. Расписание игр, состав, набор в команду и фирменная экипировка.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ce123b">
+<meta name="description" content="Meet the next generation of basketball talent. Chicago Bulls-inspired youth basketball team for players ages 12–13.">
+<title>Bulls Youth | Next Generation Basketball</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="bull" viewBox="0 0 100 80">
-    <path d="M6 6C8 30 24 40 38 40L41 29C30 29 19 22 6 6Z" fill="#fff"/>
-    <path d="M94 6C92 30 76 40 62 40L59 29C70 29 81 22 94 6Z" fill="#fff"/>
-    <path d="M35 30H65L72 46C72 60 63 71 50 77C37 71 28 60 28 46Z" fill="currentColor"/>
-    <path d="M38 44L48 48L40 52Z M62 44L52 48L60 52Z" fill="#fff"/>
-    <circle cx="43" cy="64" r="3" fill="#fff"/><circle cx="57" cy="64" r="3" fill="#fff"/>
-  </symbol>
-</svg>
-
-<header>
-  <div class="wrap nav">
-    <a href="#hero" class="logo"><svg style="color:var(--red)"><use href="#bull"/></svg>Young Bulls <span style="color:var(--red)">U13</span></a>
-    <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
-    <nav id="menu" aria-label="Основная навигация">
-      <ul>
-        <li><a href="#games">Игры</a></li>
-        <li><a href="#about">О команде</a></li>
-        <li><a href="#team">Состав</a></li>
-        <li><a href="#shop">Магазин</a></li>
-        <li><a href="#reviews">Отзывы</a></li>
-        <li><a class="btn nav-btn" href="#join">Записаться</a></li>
-      </ul>
-    </nav>
-  </div>
+<div class="announcement"><span class="pulse"></span> YOUTH BASKETBALL · AGES 12–13 <span class="announcement-right">PLAY HARD. GROW TOGETHER.</span></div>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Bulls Youth home"><span class="brand-mark">B</span><span>BULLS <b>YOUTH</b><small>CHICAGO · NEXT GEN</small></span></a>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  <nav class="nav">
+    <a href="#games">Games</a><a href="#team">Our team</a><a href="#training">Training</a><a href="#shop">Shop</a>
+    <a class="nav-cta" href="#join">JOIN THE TEAM <span>↗</span></a>
+  </nav>
 </header>
-
 <main>
+<section class="hero section" id="home">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-copy reveal">
+    <div class="eyebrow"><span class="eyebrow-line"></span> THE NEXT GENERATION STARTS HERE</div>
+    <h1>BUILT<br>TO <span>RISE.</span></h1>
+    <p class="hero-sub">Big energy. Bigger dreams.<br>A team that plays for each other.</p>
+    <p class="hero-desc">Youth basketball for ages 12–13, inspired by the fearless spirit of Chicago. We build skills, confidence and a love for the game.</p>
+    <div class="hero-actions"><a class="btn btn-red" href="#join">MEET YOUR TEAM <span>↗</span></a><a class="text-link" href="#games">VIEW NEXT GAMES <span>↓</span></a></div>
+    <div class="hero-stats"><div><strong>12–13</strong><span>AGE GROUP</span></div><div><strong>ONE</strong><span>TEAM MINDSET</span></div><div><strong>100%</strong><span>HEART & HUSTLE</span></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-image"></div><div class="hero-stamp"><span>NO SHORTCUTS</span><b>ALL<br>HEART</b><span>ALL GAME</span></div>
+    <div class="vertical-label">CHICAGO · YOUTH BASKETBALL</div>
+    <div class="hero-number">01<span>/07</span></div>
+  </div>
+  <a class="scroll-cue" href="#mission"><span></span> SCROLL TO EXPLORE</a>
+</section>
 
-<!-- 1. HERO -->
-<section class="hero" id="hero">
-  <div class="big" aria-hidden="true">23</div>
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Баскетбол для детей 12–13 лет · Чикаго</p>
-      <h1>Расти как <span>настоящий Бык</span></h1>
-      <p>Тренируемся 3 раза в неделю, играем в городской лиге и учимся главному: играть в команде, не сдаваться и любить игру.</p>
-      <div class="cta-row">
-        <a class="btn" href="#join">Записаться на пробную</a>
-        <a class="btn ghost" href="#games">Ближайшие игры</a>
-      </div>
-      <div class="stats">
-        <div><b>12</b><small>игроков</small></div>
-        <div><b>3×</b><small>тренировки в неделю</small></div>
-        <div><b>18</b><small>игр в сезоне</small></div>
-      </div>
-    </div>
-    <div class="hero-card" aria-hidden="true">
-      <svg viewBox="0 0 100 80" style="color:#0b0b0c"><use href="#bull"/></svg>
-      <h3>Первая тренировка бесплатно</h3>
-      <p>Приходи в кроссовках и с хорошим настроением. Остальное дадим мы.</p>
-    </div>
+<section class="mission section" id="mission">
+  <div class="section-kicker reveal">01 / THE MISSION</div>
+  <div class="mission-layout">
+    <h2 class="reveal">MORE THAN<br><span>A GAME.</span></h2>
+    <div class="mission-copy reveal"><p class="lead">We’re building better players — and even better teammates.</p><p>Every practice is a chance to get sharper. Every game is a chance to show courage, respect and resilience. The scoreboard matters, but how we get there matters more.</p><a class="under-link" href="#training">WHAT WE STAND FOR <span>↗</span></a></div>
+  </div>
+  <div class="values-grid">
+    <article class="value-card reveal"><span class="value-num">01</span><div class="value-icon">↗</div><h3>SKILL FIRST</h3><p>Footwork, handles, shooting and smart decisions — built one rep at a time.</p></article>
+    <article class="value-card reveal"><span class="value-num">02</span><div class="value-icon">✳</div><h3>TEAM ALWAYS</h3><p>Communication, trust and passing the ball. Nobody wins alone.</p></article>
+    <article class="value-card reveal"><span class="value-num">03</span><div class="value-icon">⚡</div><h3>CONFIDENCE FOR LIFE</h3><p>Learn to compete with courage, bounce back and believe in your progress.</p></article>
   </div>
 </section>
 
-<!-- 2. БЛИЖАЙШИЕ ИГРЫ -->
-<section id="games">
-  <div class="wrap">
-    <p class="eyebrow">Расписание</p>
-    <h2>Ближайшие игры</h2>
-    <p class="lead">Приходи поддержать команду. Вход для болельщиков бесплатный.</p>
-    <div class="games-grid">
-      <article class="next-game">
-        <span class="tag">Следующая игра</span>
-        <div class="vs"><span>Young Bulls</span><i>VS</i><span id="ng-opp">…</span></div>
-        <p id="ng-meta"></p>
-        <div class="countdown" id="countdown" aria-live="off"></div>
-      </article>
-      <div class="games-list" id="games-list"></div>
-    </div>
+<section class="games section" id="games">
+  <div class="section-head reveal"><div><div class="section-kicker">02 / MARK YOUR CALENDAR</div><h2>UP NEXT<span>.</span></h2></div><a class="under-link" href="#join">FOLLOW OUR SEASON <span>↗</span></a></div>
+  <div class="games-note">SAMPLE SCHEDULE · Replace with confirmed fixtures before publishing.</div>
+  <div class="game-list">
+    <article class="game-row reveal"><div class="game-date"><span>OCT</span><strong>18</strong><small>SAT · 10:30 AM</small></div><div class="game-match"><span class="team-mini">BY</span><div><strong>BULLS YOUTH</strong><small>HOME GAME</small></div><span class="versus">VS</span><div><strong>LAKEVIEW LIONS</strong><small>U13 DIVISION</small></div></div><div class="game-location"><span>⌖</span> Chicago Community Gym</div><a href="#join" class="round-arrow" aria-label="Ask about game">↗</a></article>
+    <article class="game-row reveal"><div class="game-date"><span>OCT</span><strong>25</strong><small>SAT · 1:00 PM</small></div><div class="game-match"><span class="team-mini opponent">NW</span><div><strong>NORTHSIDE WOLVES</strong><small>AWAY GAME</small></div><span class="versus">VS</span><div><strong>BULLS YOUTH</strong><small>U13 DIVISION</small></div></div><div class="game-location"><span>⌖</span> Northside Sports Center</div><a href="#join" class="round-arrow" aria-label="Ask about game">↗</a></article>
+    <article class="game-row reveal"><div class="game-date"><span>NOV</span><strong>01</strong><small>SAT · 11:15 AM</small></div><div class="game-match"><span class="team-mini">BY</span><div><strong>BULLS YOUTH</strong><small>HOME GAME</small></div><span class="versus">VS</span><div><strong>WEST LOOP FALCONS</strong><small>U13 DIVISION</small></div></div><div class="game-location"><span>⌖</span> Chicago Community Gym</div><a href="#join" class="round-arrow" aria-label="Ask about game">↗</a></article>
   </div>
+  <p class="fine-print">Fixtures shown are design placeholders, not official Chicago Bulls events or confirmed games.</p>
 </section>
 
-<!-- 3. О КОМАНДЕ / ПРЕИМУЩЕСТВА -->
-<section id="about" class="dark">
-  <div class="wrap">
-    <p class="eyebrow">Почему мы</p>
-    <h2>Больше, чем просто тренировки</h2>
-    <div class="cards">
-      <div class="card"><span class="ico">🏀</span><h3>Сильный тренер</h3><p>Тренер с опытом работы в школьной лиге. Разбираем технику, бросок и игру в защите.</p></div>
-      <div class="card"><span class="ico">🤝</span><h3>Командный дух</h3><p>Ребята учатся доверять партнёрам, помогать друг другу и вместе радоваться победам.</p></div>
-      <div class="card"><span class="ico">🏆</span><h3>Реальные матчи</h3><p>Каждый месяц игры с командами из других районов. Опыт, которого не даст зал.</p></div>
-      <div class="card"><span class="ico">🛡️</span><h3>Безопасность</h3><p>Группы до 12 человек, разминка, работа с нагрузкой по возрасту и внимание к каждому.</p></div>
-    </div>
+<section class="team section" id="team">
+  <div class="team-heading reveal"><div><div class="section-kicker">03 / MEET THE SQUAD</div><h2>SMALL AGE.<br><span>BIG GAME.</span></h2></div><p>Different personalities. One locker-room standard. Meet the young athletes putting in the work.</p></div>
+  <div class="roster-grid">
+    <article class="player-card player-one reveal"><div class="player-photo"></div><div class="player-overlay"><span>GUARD · #03</span><h3>JAYDEN<br>CARTER</h3><p>Quick hands. Quicker decisions.</p></div></article>
+    <article class="player-card player-two reveal"><div class="player-photo"></div><div class="player-overlay"><span>FORWARD · #11</span><h3>MALIK<br>JOHNSON</h3><p>Brings the energy every play.</p></div></article>
+    <article class="player-card player-three reveal"><div class="player-photo"></div><div class="player-overlay"><span>GUARD · #07</span><h3>ELI<br>THOMPSON</h3><p>Always looking for the open man.</p></div></article>
+    <article class="player-card player-four reveal"><div class="player-photo"></div><div class="player-overlay"><span>CENTER · #15</span><h3>NOAH<br>WILLIAMS</h3><p>Strong in the paint, stronger as a teammate.</p></div></article>
   </div>
+  <div class="team-disclaimer">PLAYER NAMES AND PROFILES ARE FICTIONAL CONCEPT CONTENT.</div>
 </section>
 
-<!-- 4. СОСТАВ -->
-<section id="team">
-  <div class="wrap">
-    <p class="eyebrow">Состав сезона</p>
-    <h2>Наша команда</h2>
-    <p class="lead">Ребята, которые выходят на площадку за Young Bulls. Имена вымышленные, замените на реальные.</p>
-    <div class="roster" id="roster"></div>
-  </div>
+<section class="training section" id="training">
+  <div class="training-photo reveal"></div><div class="training-copy reveal"><div class="section-kicker">04 / PUT IN THE WORK</div><h2>EVERY REP<br><span>COUNTS.</span></h2><p>Confidence doesn’t show up by accident. It’s built through focused practice, good coaching and teammates who push you to be better.</p><div class="training-points"><div><b>01</b><span>Skills & ball handling</span><i>↗</i></div><div><b>02</b><span>Shooting & decision-making</span><i>↗</i></div><div><b>03</b><span>Team play & game IQ</span><i>↗</i></div></div><a class="btn btn-light" href="#join">TRY A PRACTICE <span>↗</span></a></div>
 </section>
 
-<!-- 5. МАГАЗИН -->
-<section id="shop" class="dark">
-  <div class="wrap">
-    <div class="shop-head">
-      <div>
-        <p class="eyebrow">Экипировка</p>
-        <h2>Одевайся как команда</h2>
-        <p class="lead">Детская баскетбольная форма и аксессуары Chicago Bulls. Все товары в большом магазине.</p>
-      </div>
-      <a class="btn ghost" href="https://www.nba.com/bulls/shop" target="_blank" rel="noopener">Весь магазин →</a>
-    </div>
-    <div class="products" id="products"></div>
+<section class="shop section" id="shop">
+  <div class="section-head reveal"><div><div class="section-kicker">05 / GEAR UP</div><h2>REP THE RED<span>.</span></h2></div><div class="shop-intro">Court-ready essentials for young hoopers.<br>Find your fit, then get out and play.</div></div>
+  <div class="product-grid">
+    <article class="product-card reveal"><a class="product-image jersey" href="https://www.nba.com/bulls/" target="_blank" rel="noopener" aria-label="Shop basketball jersey"><span class="product-tag">GAME DAY</span><div class="jersey-art"><small>BULLS</small><strong>23</strong></div><span class="product-plus">↗</span></a><div class="product-info"><div><h3>YOUTH BASKETBALL JERSEY</h3><p>Lightweight · Court-inspired</p></div><span class="product-price">SHOP ↗</span></div></article>
+    <article class="product-card reveal"><a class="product-image ball" href="https://www.nba.com/bulls/" target="_blank" rel="noopener" aria-label="Shop basketball"><span class="product-tag">DAILY WORK</span><div class="ball-art">B</div><span class="product-plus">↗</span></a><div class="product-info"><div><h3>INDOOR / OUTDOOR BALL</h3><p>Grip it. Own the court.</p></div><span class="product-price">SHOP ↗</span></div></article>
+    <article class="product-card reveal"><a class="product-image hoodie" href="https://www.nba.com/bulls/" target="_blank" rel="noopener" aria-label="Shop youth hoodie"><span class="product-tag">OFF-COURT</span><div class="hoodie-art"><span>BULLS<br><b>YOUTH</b></span></div><span class="product-plus">↗</span></a><div class="product-info"><div><h3>YOUTH WARM-UP HOODIE</h3><p>Warm-up to wind-down.</p></div><span class="product-price">SHOP ↗</span></div></article>
   </div>
+  <a class="btn btn-red shop-all reveal" href="https://www.nba.com/bulls/" target="_blank" rel="noopener">EXPLORE THE FULL STORE <span>↗</span></a>
+  <p class="fine-print">Product visuals are concept mockups. Shop links lead to the official Bulls website; verify youth sizing and product availability there.</p>
 </section>
 
-<!-- 6. ОТЗЫВЫ + FAQ -->
-<section id="reviews">
-  <div class="wrap">
-    <p class="eyebrow">Родители о нас</p>
-    <h2>Что говорят семьи</h2>
-    <div class="quotes">
-      <blockquote><p>«Сын пришёл застенчивым, а через три месяца уже капитан второй пятёрки. Тренер находит подход к каждому.»</p><cite>Анна, мама Максима, 12 лет</cite></blockquote>
-      <blockquote><p>«Нравится, что тренировки строгие, но с юмором. Дочь не пропускает ни одной и сама собирает сумку.»</p><cite>Игорь, папа Софии, 13 лет</cite></blockquote>
-      <blockquote><p>«Игры по выходным стали семейным ритуалом. Всей роднёй ходим болеть.»</p><cite>Елена, мама Артёма, 12 лет</cite></blockquote>
-    </div>
-    <div class="faq">
-      <h3>Частые вопросы</h3>
-      <details><summary>Нужен ли опыт, чтобы прийти?</summary><p>Нет. Берём и новичков, и тех, кто уже играл. Группы собираем по уровню.</p></details>
-      <details><summary>Что взять на первую тренировку?</summary><p>Спортивную форму, кроссовки для зала и воду. Мяч выдадим.</p></details>
-      <details><summary>Сколько стоит обучение?</summary><p>Первое занятие бесплатно. Стоимость абонемента расскажем после пробной тренировки.</p></details>
-    </div>
-  </div>
+<section class="join section" id="join">
+  <div class="join-bg"></div><div class="join-content reveal"><div class="section-kicker">06 / YOUR NEXT PLAY</div><h2>YOUR STORY.<br>YOUR <span>SHOT.</span></h2><p>Ready to learn, compete and grow with the squad? Parents and players, let’s talk.</p><a class="btn btn-white" href="mailto:team@example.com?subject=Bulls%20Youth%20Tryout%20Enquiry">ASK ABOUT TRYOUTS <span>↗</span></a><small>Replace this email with your team's contact address before launch.</small></div><div class="join-badge">NEXT<br>GEN<br><span>★</span></div>
 </section>
-
-<!-- 7. ЗАПИСЬ -->
-<section id="join" class="join">
-  <div class="wrap join-grid">
-    <div>
-      <p class="eyebrow">Набор открыт</p>
-      <h2>Запишись на пробную тренировку</h2>
-      <p class="lead">Оставьте контакты, и тренер свяжется с вами в течение дня. Осталось 4 места в группе.</p>
-      <ul class="ticks">
-        <li>Бесплатное первое занятие</li>
-        <li>Мячи и манишки выдаём</li>
-        <li>Группы 12–13 лет</li>
-      </ul>
-    </div>
-    <form id="join-form" novalidate>
-      <label>Имя ребёнка<input name="child" required autocomplete="off" placeholder="Например, Максим"></label>
-      <label>Возраст
-        <select name="age" required><option value="12">12 лет</option><option value="13">13 лет</option></select>
-      </label>
-      <label>Телефон родителя<input name="phone" type="tel" required inputmode="tel" placeholder="+7 900 000-00-00"></label>
-      <button class="btn" type="submit">Записаться</button>
-      <p class="form-msg" id="form-msg" role="status"></p>
-    </form>
-  </div>
-</section>
-
 </main>
-
-<footer>
-  <div class="wrap foot">
-    <a href="#hero" class="logo"><svg style="color:var(--red)"><use href="#bull"/></svg>Young Bulls U13</a>
-    <p>Чикаго · Спортзал Windy Court, ул. Примерная, 23 · Пн, Ср, Пт 17:00</p>
-    <p class="small">Независимая детская команда. Не является официальным сайтом NBA или Chicago Bulls.</p>
-  </div>
-</footer>
-
-<script src="app.js"></script>
+<footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">B</span><span>BULLS <b>YOUTH</b><small>CHICAGO · NEXT GEN</small></span></a><p>BUILT TO RISE. TOGETHER.</p><div class="footer-links"><a href="#games">Games</a><a href="#team">Team</a><a href="#shop">Shop</a><a href="#join">Contact</a></div><small class="legal">Independent youth team concept inspired by Chicago basketball culture. Not affiliated with or endorsed by the NBA or Chicago Bulls.</small><a class="back-top" href="#home">BACK TO TOP ↑</a></footer>
+<script src="script.js"></script>
 </body>
 </html>
