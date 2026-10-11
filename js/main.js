@@ -70,8 +70,10 @@ if (heroVideo && heroVideo.dataset.src) {
     feed.appendChild(col);
   }
   // «Thumb-stop»: наведение на ленту останавливает её
-  feed.addEventListener('pointerenter', () => feed.classList.add('is-frozen'));
-  feed.addEventListener('pointerleave', () => feed.classList.remove('is-frozen'));
+  if (FINE) {
+    feed.addEventListener('pointerenter', () => feed.classList.add('is-frozen'));
+    feed.addEventListener('pointerleave', () => feed.classList.remove('is-frozen'));
+  }
 }
 $$('.clip').forEach(initClip);
 
@@ -195,12 +197,21 @@ if (FINE && !RM) {
 
 /* ---------- аккордеон услуг ---------- */
 const panes = $$('[data-acc] .pane');
-function openPane(p) {
+const WIDE = matchMedia('(min-width: 1101px)');
+function openPane(p, fromTap) {
+  if (p.classList.contains('is-open')) return;
   panes.forEach(x => { const on = x === p; x.classList.toggle('is-open', on); $('.pane__tab', x).setAttribute('aria-expanded', String(on)); });
+  const body = $('.pane__body', p);
+  body.tabIndex = -1;
+  if (fromTap) body.focus({ preventScroll: true });
+  // в колонке соседние карточки схлопываются, поэтому возвращаем открытую в поле зрения
+  if (fromTap && !WIDE.matches) requestAnimationFrame(() => {
+    if (p.getBoundingClientRect().top < 70) p.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+  });
 }
 panes.forEach(p => {
-  $('.pane__tab', p).addEventListener('click', () => openPane(p));
-  if (FINE) p.addEventListener('pointerenter', () => openPane(p));
+  $('.pane__tab', p).addEventListener('click', () => openPane(p, true));
+  if (FINE) p.addEventListener('pointerenter', () => { if (WIDE.matches) openPane(p); });
 });
 
 /* ---------- фильтр портфолио ---------- */
@@ -280,23 +291,27 @@ form.addEventListener('submit', async e => {
 });
 
 /* ---------- переключение языка ---------- */
-const langBtn = $('[data-lang-toggle]');
-langBtn.addEventListener('click', () => {
+const langBtns = $$('[data-lang-toggle]');
+langBtns.forEach(b => b.addEventListener('click', () => {
   lang = lang === 'ru' ? 'en' : 'ru';
   const dict = lang === 'ru' ? RU : window.I18N.en;
   root.lang = lang;
   $$('[data-i18n]').forEach(el => { const v = dict[el.dataset.i18n]; if (v) el.textContent = v; });
   $$('[data-i18n-aria]').forEach(el => { const v = lang === 'ru' ? RU_ARIA[el.dataset.i18nAria] : window.I18N.en[el.dataset.i18nAria]; if (v) el.setAttribute('aria-label', v); });
   $$('[data-split]').forEach(el => { split(el); });
-  langBtn.textContent = lang === 'ru' ? 'EN' : 'RU';
-  langBtn.setAttribute('aria-label', lang === 'ru' ? 'Switch to English' : 'Переключить на русский');
-});
+  langBtns.forEach(b => { b.textContent = lang === 'ru' ? 'EN' : 'RU'; b.setAttribute('aria-label', lang === 'ru' ? 'Switch to English' : 'Переключить на русский'); });
+}));
 
 /* ---------- горизонтальный скролл «Как это работает» ---------- */
 const proc = $('.process'), track = $('.process__track');
 let procMax = 0;
+track.addEventListener('scroll', () => {
+  if (proc.classList.contains('is-pinned')) return;
+  const m = track.scrollWidth - track.clientWidth;
+  proc.style.setProperty('--p', m > 0 ? (track.scrollLeft / m).toFixed(3) : '0');
+}, { passive: true });
 function layoutProcess() {
-  const pin = !RM && innerWidth > 760;
+  const pin = !RM && innerWidth > 760 && innerHeight > 600;
   proc.classList.toggle('is-pinned', pin);
   if (!pin) { track.style.transform = ''; return; }
   procMax = Math.max(0, track.scrollWidth - innerWidth);
@@ -339,7 +354,8 @@ const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame)
 addEventListener('scroll', req, { passive: true });
 // после остановки скролла возвращаем marquee к обычной скорости
 setInterval(() => { if (speed > 0 && !RM) { speed = Math.max(0, speed - .6); tapeAnims.forEach(a => { a.playbackRate = 1 + speed; }); } }, 120);
-addEventListener('resize', () => { layoutProcess(); req(); });
+let lastW = innerWidth;
+addEventListener('resize', () => { if (innerWidth !== lastW || proc.classList.contains('is-pinned')) { lastW = innerWidth; layoutProcess(); } req(); });
 
 /* ---------- старт ---------- */
 $('[data-year]').textContent = new Date().getFullYear();
