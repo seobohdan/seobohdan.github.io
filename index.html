@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Young Bulls U13 — детская баскетбольная команда</title>
+<meta name="description" content="Young Bulls U13: баскетбольная команда для детей 12–13 лет. Расписание игр, состав, набор в команду и фирменная экипировка.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bull" viewBox="0 0 100 80">
+    <path d="M6 6C8 30 24 40 38 40L41 29C30 29 19 22 6 6Z" fill="#fff"/>
+    <path d="M94 6C92 30 76 40 62 40L59 29C70 29 81 22 94 6Z" fill="#fff"/>
+    <path d="M35 30H65L72 46C72 60 63 71 50 77C37 71 28 60 28 46Z" fill="currentColor"/>
+    <path d="M38 44L48 48L40 52Z M62 44L52 48L60 52Z" fill="#fff"/>
+    <circle cx="43" cy="64" r="3" fill="#fff"/><circle cx="57" cy="64" r="3" fill="#fff"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#hero" class="logo"><svg style="color:var(--red)"><use href="#bull"/></svg>Young Bulls <span style="color:var(--red)">U13</span></a>
+    <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    <nav id="menu" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#games">Игры</a></li>
+        <li><a href="#about">О команде</a></li>
+        <li><a href="#team">Состав</a></li>
+        <li><a href="#shop">Магазин</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a class="btn nav-btn" href="#join">Записаться</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="big" aria-hidden="true">23</div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Баскетбол для детей 12–13 лет · Чикаго</p>
+      <h1>Расти как <span>настоящий Бык</span></h1>
+      <p>Тренируемся 3 раза в неделю, играем в городской лиге и учимся главному: играть в команде, не сдаваться и любить игру.</p>
+      <div class="cta-row">
+        <a class="btn" href="#join">Записаться на пробную</a>
+        <a class="btn ghost" href="#games">Ближайшие игры</a>
+      </div>
+      <div class="stats">
+        <div><b>12</b><small>игроков</small></div>
+        <div><b>3×</b><small>тренировки в неделю</small></div>
+        <div><b>18</b><small>игр в сезоне</small></div>
+      </div>
+    </div>
+    <div class="hero-card" aria-hidden="true">
+      <svg viewBox="0 0 100 80" style="color:#0b0b0c"><use href="#bull"/></svg>
+      <h3>Первая тренировка бесплатно</h3>
+      <p>Приходи в кроссовках и с хорошим настроением. Остальное дадим мы.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. БЛИЖАЙШИЕ ИГРЫ -->
+<section id="games">
+  <div class="wrap">
+    <p class="eyebrow">Расписание</p>
+    <h2>Ближайшие игры</h2>
+    <p class="lead">Приходи поддержать команду. Вход для болельщиков бесплатный.</p>
+    <div class="games-grid">
+      <article class="next-game">
+        <span class="tag">Следующая игра</span>
+        <div class="vs"><span>Young Bulls</span><i>VS</i><span id="ng-opp">…</span></div>
+        <p id="ng-meta"></p>
+        <div class="countdown" id="countdown" aria-live="off"></div>
+      </article>
+      <div class="games-list" id="games-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. О КОМАНДЕ / ПРЕИМУЩЕСТВА -->
+<section id="about" class="dark">
+  <div class="wrap">
+    <p class="eyebrow">Почему мы</p>
+    <h2>Больше, чем просто тренировки</h2>
+    <div class="cards">
+      <div class="card"><span class="ico">🏀</span><h3>Сильный тренер</h3><p>Тренер с опытом работы в школьной лиге. Разбираем технику, бросок и игру в защите.</p></div>
+      <div class="card"><span class="ico">🤝</span><h3>Командный дух</h3><p>Ребята учатся доверять партнёрам, помогать друг другу и вместе радоваться победам.</p></div>
+      <div class="card"><span class="ico">🏆</span><h3>Реальные матчи</h3><p>Каждый месяц игры с командами из других районов. Опыт, которого не даст зал.</p></div>
+      <div class="card"><span class="ico">🛡️</span><h3>Безопасность</h3><p>Группы до 12 человек, разминка, работа с нагрузкой по возрасту и внимание к каждому.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. СОСТАВ -->
+<section id="team">
+  <div class="wrap">
+    <p class="eyebrow">Состав сезона</p>
+    <h2>Наша команда</h2>
+    <p class="lead">Ребята, которые выходят на площадку за Young Bulls. Имена вымышленные, замените на реальные.</p>
+    <div class="roster" id="roster"></div>
+  </div>
+</section>
+
+<!-- 5. МАГАЗИН -->
+<section id="shop" class="dark">
+  <div class="wrap">
+    <div class="shop-head">
+      <div>
+        <p class="eyebrow">Экипировка</p>
+        <h2>Одевайся как команда</h2>
+        <p class="lead">Детская баскетбольная форма и аксессуары Chicago Bulls. Все товары в большом магазине.</p>
+      </div>
+      <a class="btn ghost" href="https://www.nba.com/bulls/shop" target="_blank" rel="noopener">Весь магазин →</a>
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<!-- 6. ОТЗЫВЫ + FAQ -->
+<section id="reviews">
+  <div class="wrap">
+    <p class="eyebrow">Родители о нас</p>
+    <h2>Что говорят семьи</h2>
+    <div class="quotes">
+      <blockquote><p>«Сын пришёл застенчивым, а через три месяца уже капитан второй пятёрки. Тренер находит подход к каждому.»</p><cite>Анна, мама Максима, 12 лет</cite></blockquote>
+      <blockquote><p>«Нравится, что тренировки строгие, но с юмором. Дочь не пропускает ни одной и сама собирает сумку.»</p><cite>Игорь, папа Софии, 13 лет</cite></blockquote>
+      <blockquote><p>«Игры по выходным стали семейным ритуалом. Всей роднёй ходим болеть.»</p><cite>Елена, мама Артёма, 12 лет</cite></blockquote>
+    </div>
+    <div class="faq">
+      <h3>Частые вопросы</h3>
+      <details><summary>Нужен ли опыт, чтобы прийти?</summary><p>Нет. Берём и новичков, и тех, кто уже играл. Группы собираем по уровню.</p></details>
+      <details><summary>Что взять на первую тренировку?</summary><p>Спортивную форму, кроссовки для зала и воду. Мяч выдадим.</p></details>
+      <details><summary>Сколько стоит обучение?</summary><p>Первое занятие бесплатно. Стоимость абонемента расскажем после пробной тренировки.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ЗАПИСЬ -->
+<section id="join" class="join">
+  <div class="wrap join-grid">
+    <div>
+      <p class="eyebrow">Набор открыт</p>
+      <h2>Запишись на пробную тренировку</h2>
+      <p class="lead">Оставьте контакты, и тренер свяжется с вами в течение дня. Осталось 4 места в группе.</p>
+      <ul class="ticks">
+        <li>Бесплатное первое занятие</li>
+        <li>Мячи и манишки выдаём</li>
+        <li>Группы 12–13 лет</li>
+      </ul>
+    </div>
+    <form id="join-form" novalidate>
+      <label>Имя ребёнка<input name="child" required autocomplete="off" placeholder="Например, Максим"></label>
+      <label>Возраст
+        <select name="age" required><option value="12">12 лет</option><option value="13">13 лет</option></select>
+      </label>
+      <label>Телефон родителя<input name="phone" type="tel" required inputmode="tel" placeholder="+7 900 000-00-00"></label>
+      <button class="btn" type="submit">Записаться</button>
+      <p class="form-msg" id="form-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#hero" class="logo"><svg style="color:var(--red)"><use href="#bull"/></svg>Young Bulls U13</a>
+    <p>Чикаго · Спортзал Windy Court, ул. Примерная, 23 · Пн, Ср, Пт 17:00</p>
+    <p class="small">Независимая детская команда. Не является официальным сайтом NBA или Chicago Bulls.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
