@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THUMBSTOP — AI-видео для брендов, рекламы и соцсетей</title>
+<meta name="description" content="Креативная студия AI-видео. Reels, TikTok, рекламные ролики продуктов, fashion-кампании и брендовые серии без дорогих съёмок.">
+<meta property="og:title" content="THUMBSTOP — AI-видео, которые невозможно пролистать">
+<meta property="og:description" content="Reels, TikTok, product ads и брендовые кампании, созданные с помощью AI.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14072E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700;800;900&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Перейти к содержимому</a>
+
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
+
+<!-- Иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 100 100"><path d="M50 0c3 30 20 47 50 50-30 3-47 20-50 50-3-30-20-47-50-50C30 47 47 30 50 0z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="THUMBSTOP, на главную">
+    <span class="logo-mark" aria-hidden="true"><svg><use href="#i-star"/></svg></span>THUMBSTOP
+  </a>
+  <nav class="nav__links" aria-label="Основная навигация">
+    <a href="#work" data-i18n="nav.work">Работы</a>
+    <a href="#services" data-i18n="nav.services">Услуги</a>
+    <a href="#process" data-i18n="nav.process">Процесс</a>
+    <a href="#pricing" data-i18n="nav.pricing">Тарифы</a>
+  </nav>
+  <div class="nav__right">
+    <button class="lang" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+    <a class="btn btn--lime btn--sm magnetic" href="#contact" data-i18n="cta.start">Начать проект</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Мобильная навигация">
+    <a href="#work" data-i18n="nav.work">Работы</a>
+    <a href="#services" data-i18n="nav.services">Услуги</a>
+    <a href="#process" data-i18n="nav.process">Процесс</a>
+    <a href="#pricing" data-i18n="nav.pricing">Тарифы</a>
+    <a href="#contact" data-i18n="cta.start">Начать проект</a>
+  </nav>
+  <p class="menu__mail"><a href="mailto:hello@thumbstop.studio">hello@thumbstop.studio</a></p>
+</div>
+
+<main id="main">
+
+<!-- 01 HERO. Фоновое видео: укажите путь в data-src у .hero__video — оно заменит анимированную ленту. -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <video class="hero__video" muted loop playsinline preload="none" data-src="" poster=""></video>
+    <div class="feed" data-feed></div>
+    <div class="hero__shade"></div>
+  </div>
+
+  <div class="sticker sticker--a" aria-hidden="true">9:16</div>
+  <div class="sticker sticker--b" aria-hidden="true"><i class="rec"></i>REC</div>
+  <div class="sticker sticker--c" aria-hidden="true" data-i18n="hero.st1">без съёмок</div>
+  <div class="sticker sticker--d" aria-hidden="true">#fyp</div>
+  <div class="gloss gloss--1" aria-hidden="true"></div>
+  <div class="gloss gloss--2" aria-hidden="true"></div>
+  <svg class="spin-star spin-star--hero" aria-hidden="true"><use href="#i-star"/></svg>
+
+  <div class="hero__inner">
+    <h1 class="hero__title" id="hero-title" data-split="words">
+      <span class="line" data-i18n="hero.t1">ТВОЙ БРЕНД.</span>
+      <span class="line" data-i18n="hero.t2">НОВЫЙ УРОВЕНЬ</span>
+      <span class="line" data-i18n="hero.t3">КОНТЕНТА.</span>
+    </h1>
+    <div class="hero__foot">
+      <p class="hero__lead" data-i18n="hero.lead">Создаём AI-видео, которые невозможно пролистать. Больше внимания. Больше вовлечённости. Больше возможностей для роста.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--lime btn--lg magnetic" href="#contact" data-i18n="cta.create">Создать моё видео</a>
+        <a class="btn btn--ghost btn--lg magnetic" href="#work" data-i18n="cta.works">Смотреть наши работы</a>
+      </div>
+    </div>
+    <button class="reel-btn magnetic" type="button" data-open-viewer data-scene="orb" data-theme="violet" data-video="" data-title="Showreel" aria-label="Смотреть шоурил">
+      <svg class="reel-btn__ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circ" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+        <text><textPath href="#circ">PLAY SHOWREEL ✦ PLAY SHOWREEL ✦ PLAY SHOWREEL ✦ </textPath></text>
+      </svg>
+      <span class="reel-btn__core"><svg><use href="#i-play"/></svg></span>
+    </button>
+  </div>
+</section>
+
+<!-- 02 MARQUEE -->
+<div class="tapes" aria-label="AI video, creative content, social ads, viral visuals, next-gen storytelling">
+  <div class="tape tape--lime" aria-hidden="true"><div class="tape__track" data-marquee>
+    <span>AI VIDEO</span><svg><use href="#i-star"/></svg><span>CREATIVE CONTENT</span><svg><use href="#i-star"/></svg><span>SOCIAL ADS</span><svg><use href="#i-star"/></svg><span>VIRAL VISUALS</span><svg><use href="#i-star"/></svg><span>NEXT-GEN STORYTELLING</span><svg><use href="#i-star"/></svg>
+  </div></div>
+  <div class="tape tape--pink" aria-hidden="true"><div class="tape__track tape__track--rev" data-marquee>
+    <span>NEXT-GEN STORYTELLING</span><svg><use href="#i-star"/></svg><span>VIRAL VISUALS</span><svg><use href="#i-star"/></svg><span>SOCIAL ADS</span><svg><use href="#i-star"/></svg><span>CREATIVE CONTENT</span><svg><use href="#i-star"/></svg><span>AI VIDEO</span><svg><use href="#i-star"/></svg>
+  </div></div>
+</div>
+
+<!-- 03 СТОП -->
+<section class="stop" aria-labelledby="stop-title">
+  <div class="wrap">
+    <div class="stop__head">
+      <h2 class="h2 stop__title" id="stop-title" data-split="chars"><span class="line" data-i18n="stop.t1">ЛЮДИ СКРОЛЛЯТ.</span> <span class="line" data-i18n="stop.t2">МЫ ЗАСТАВЛЯЕМ</span> <span class="line" data-i18n="stop.t3">ОСТАНОВИТЬСЯ.</span></h2>
+      <p class="stop__text reveal" data-reveal="up" data-i18n="stop.text">У твоего бренда есть секунды, чтобы привлечь внимание. Мы превращаем эти секунды в визуальные истории, которые хочется досмотреть, переслать и запомнить.</p>
+    </div>
+    <ul class="stop__cards">
+      <li class="scard scard--violet tilt reveal" data-reveal="rise">
+        <div class="scard__vis" aria-hidden="true">
+          <svg class="timer" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"/><circle class="timer__run" cx="60" cy="60" r="50"/></svg>
+          <span class="timer__n">0:03</span>
+        </div>
+        <h3 class="scard__title" data-i18n="stop.c1t">Захватывай внимание</h3>
+        <div class="scard__body"><p data-i18n="stop.c1">Яркий визуальный контент для первых секунд просмотра.</p></div>
+      </li>
+      <li class="scard scard--orange tilt reveal" data-reveal="rise">
+        <div class="scard__vis" aria-hidden="true">
+          <div class="minifeed"><i></i><i></i><i class="hot"></i><i></i></div>
+        </div>
+        <h3 class="scard__title" data-i18n="stop.c2t">Выделяйся в ленте</h3>
+        <div class="scard__body"><p data-i18n="stop.c2">Необычные идеи и образы, которые сложно повторить обычной съёмкой.</p></div>
+      </li>
+      <li class="scard scard--blue tilt reveal" data-reveal="rise">
+        <div class="scard__vis" aria-hidden="true">
+          <div class="stack"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h3 class="scard__title" data-i18n="stop.c3t">Создавай больше</h3>
+        <div class="scard__body"><p data-i18n="stop.c3">Выпускай больше креативов без постоянных съёмок и дорогих продакшен-команд.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 SHOWREEL
+     Замена медиа: у каждого .clip укажите data-video="media/xxx.mp4" и, по желанию, data-poster="media/xxx.jpg".
+     Пока data-video пустой, показывается анимированная демо-сцена (data-scene: orb | bottle | blob | tunnel | splash | grid | stripes | ring). -->
+<section class="reel" id="work" aria-labelledby="reel-title">
+  <div class="wrap">
+    <div class="reel__head">
+      <h2 class="h2 reel__title" id="reel-title" data-split="words"><span class="line" data-i18n="reel.t1">МЕНЬШЕ СЛОВ.</span> <span class="line" data-i18n="reel.t2">БОЛЬШЕ ВАУ.</span></h2>
+      <div class="chips" role="group" aria-label="Фильтр по категориям">
+        <button class="chip is-on" type="button" data-filter="all" aria-pressed="true" data-i18n="reel.all">Все</button>
+        <button class="chip" type="button" data-filter="fashion" aria-pressed="false">Fashion &amp; Beauty</button>
+        <button class="chip" type="button" data-filter="product" aria-pressed="false">Product</button>
+        <button class="chip" type="button" data-filter="reels" aria-pressed="false">Viral Reels</button>
+        <button class="chip" type="button" data-filter="food" aria-pressed="false">Food &amp; Beverage</button>
+        <button class="chip" type="button" data-filter="music" aria-pressed="false">Music</button>
+        <button class="chip" type="button" data-filter="brand" aria-pressed="false">Brand</button>
+      </div>
+    </div>
+    <p class="reel__note" data-i18n="reel.note">Демо-сцены. Замените их на свои ролики перед запуском.</p>
+
+    <ul class="works">
+      <li class="work w1" data-cat="fashion"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="blob" data-theme="pink" data-video="" data-poster="" data-parallax="0.06"></div></div>
+        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Хромовый сон</span></span>
+      </button></li>
+      <li class="work w2" data-cat="product"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="bottle" data-theme="orange" data-video="" data-parallax="0.05"></div></div>
+        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">Флакон №7</span></span>
+      </button></li>
+      <li class="work w3" data-cat="reels"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="stripes" data-theme="lime" data-video=""></div></div>
+        <span class="work__meta"><span class="work__cat">Viral Reels</span><span class="work__name">Петля внимания</span></span>
+      </button></li>
+      <li class="work w4" data-cat="food"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="splash" data-theme="orange" data-video=""></div></div>
+        <span class="work__meta"><span class="work__cat">Food &amp; Beverage</span><span class="work__name">Газировка в невесомости</span></span>
+      </button></li>
+      <li class="work w5" data-cat="music"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="tunnel" data-theme="violet" data-video="" data-parallax="0.08"></div></div>
+        <span class="work__meta"><span class="work__cat">Music &amp; Entertainment</span><span class="work__name">Неоновый тоннель</span></span>
+      </button></li>
+      <li class="work w6" data-cat="brand"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="grid" data-theme="blue" data-video="" data-parallax="0.05"></div></div>
+        <span class="work__meta"><span class="work__cat">Brand Campaigns</span><span class="work__name">Город без гравитации</span></span>
+      </button></li>
+      <li class="work w7" data-cat="fashion"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="ring" data-theme="lime" data-video=""></div></div>
+        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Жидкий шёлк</span></span>
+      </button></li>
+      <li class="work w8" data-cat="product"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="orb" data-theme="blue" data-video=""></div></div>
+        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">Наушники на орбите</span></span>
+      </button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 УСЛУГИ: горизонтальный аккордеон -->
+<section class="services" id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <h2 class="h2 services__title" id="svc-title" data-split="words"><span class="line" data-i18n="svc.t1">ТВОИ ИДЕИ. НАШ AI.</span> <span class="line" data-i18n="svc.t2">БЕЗГРАНИЧНЫЕ ВОЗМОЖНОСТИ.</span></h2>
+    <div class="acc" data-acc>
+      <article class="pane pane--pink is-open">
+        <button class="pane__tab" type="button" aria-expanded="true" aria-controls="p1"><span class="pane__n">01</span><span class="pane__name">AI Reels &amp; TikTok</span></button>
+        <div class="pane__body" id="p1">
+          <div class="pane__vis vis-phones" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="pane__copy"><h3>AI Reels &amp; TikTok</h3><p data-i18n="svc.1">Короткие динамичные видео для Instagram, TikTok и YouTube Shorts.</p>
+          <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Reels & TikTok" data-i18n="cta.want">Хочу такое</a></div>
+        </div>
+      </article>
+      <article class="pane pane--orange">
+        <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p2"><span class="pane__n">02</span><span class="pane__name">AI Product Ads</span></button>
+        <div class="pane__body" id="p2">
+          <div class="pane__vis"><div class="clip" data-scene="bottle" data-theme="orange" data-video=""></div></div>
+          <div class="pane__copy"><h3>AI Product Ads</h3><p data-i18n="svc.2">Рекламные ролики продуктов без необходимости организовывать полноценную съёмку.</p>
+          <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Product Ads" data-i18n="cta.want">Хочу такое</a></div>
+        </div>
+      </article>
+      <article class="pane pane--violet">
+        <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p3"><span class="pane__n">03</span><span class="pane__name">AI Fashion &amp; Lifestyle</span></button>
+        <div class="pane__body" id="p3">
+          <div class="pane__vis"><div class="clip" data-scene="blob" data-theme="pink" data-video=""></div></div>
+          <div class="pane__copy"><h3>AI Fashion &amp; Lifestyle</h3><p data-i18n="svc.3">Кинематографичные fashion-кампании, виртуальные модели, фантастические локации.</p>
+          <a class="btn btn--lime magnetic" href="#contact" data-prefill="AI Fashion & Lifestyle" data-i18n="cta.want">Хочу такое</a></div>
+        </div>
+      </article>
+      <article class="pane pane--blue">
+        <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p4"><span class="pane__n">04</span><span class="pane__name">AI Brand Campaigns</span></button>
+        <div class="pane__body" id="p4">
+          <div class="pane__vis"><div class="clip" data-scene="grid" data-theme="blue" data-video=""></div></div>
+          <div class="pane__copy"><h3>AI Brand Campaigns</h3><p data-i18n="svc.4">Креативные рекламные концепции и серии видеороликов для продвижения брендов.</p>
+          <a class="btn btn--lime magnetic" href="#contact" data-prefill="AI Brand Campaigns" data-i18n="cta.want">Хочу такое</a></div>
+        </div>
+      </article>
+      <article class="pane pane--lime">
+        <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p5"><span class="pane__n">05</span><span class="pane__name">AI Video from Your Content</span></button>
+        <div class="pane__body" id="p5">
+          <div class="pane__vis vis-photo" aria-hidden="true"><div class="photo"><i></i></div><div class="photo photo--live"><div class="clip" data-scene="orb" data-theme="violet" data-video=""></div></div></div>
+          <div class="pane__copy"><h3>AI Video from Your Content</h3><p data-i18n="svc.5">Превращение существующих фотографий, изображений и идей в анимированные видеоролики.</p>
+          <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Video from Your Content" data-i18n="cta.want">Хочу такое</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 РЕЗУЛЬТАТ. Без выдуманной статистики: диаграммы иллюстрируют возможности, а не показатели. -->
+<section class="results" aria-labelledby="res-title">
+  <div class="wrap">
+    <h2 class="h2 results__title" id="res-title" data-split="chars"><span class="line" data-i18n="res.t1">НЕ ПРОСТО КРАСИВО.</span> <span class="line" data-i18n="res.t2">СОЗДАНО ДЛЯ РЕЗУЛЬТАТА.</span></h2>
+    <ol class="spec">
+      <li class="spec__row reveal" data-reveal="wipe">
+        <div class="spec__copy"><h3 data-i18n="res.1t">Больше шансов привлечь внимание</h3><p data-i18n="res.1">Первые секунды решают, досмотрят ли ролик. Мы строим видео вокруг сильного кадра в самом начале.</p></div>
+        <div class="dia dia--hook" aria-hidden="true"><div class="hook"><i class="hook__fill"></i><span class="hook__mark"></span></div><span class="dia__cap" data-i18n="res.1c">хук в первые секунды</span></div>
+      </li>
+      <li class="spec__row reveal" data-reveal="wipe">
+        <div class="spec__copy"><h3 data-i18n="res.2t">Контент для регулярных публикаций</h3><p data-i18n="res.2">Серия роликов в одном стиле закрывает контент-план на недели вперёд.</p></div>
+        <div class="dia dia--cal" aria-hidden="true"><div class="cal"></div></div>
+      </li>
+      <li class="spec__row reveal" data-reveal="wipe">
+        <div class="spec__copy"><h3 data-i18n="res.3t">Быстрое тестирование рекламных концепций</h3><p data-i18n="res.3">Несколько версий одной идеи: разные хуки, цвета и финалы. Запускай и смотри, что работает.</p></div>
+        <div class="dia dia--ab" aria-hidden="true"><div class="ab"><span>A</span><span>B</span><span>C</span></div></div>
+      </li>
+      <li class="spec__row reveal" data-reveal="wipe">
+        <div class="spec__copy"><h3 data-i18n="res.4t">Производство без традиционных съёмочных затрат</h3><p data-i18n="res.4">Не нужно арендовать студию, свет и локации или собирать съёмочную группу.</p></div>
+        <div class="dia dia--cross" aria-hidden="true"><ul class="cross"><li data-i18n="res.4a">студия</li><li data-i18n="res.4b">свет</li><li data-i18n="res.4c">локация</li><li data-i18n="res.4d">съёмочная группа</li></ul></div>
+      </li>
+      <li class="spec__row reveal" data-reveal="wipe">
+        <div class="spec__copy"><h3 data-i18n="res.5t">Адаптация под разные платформы</h3><p data-i18n="res.5">Одна идея превращается в ролики под Reels, TikTok, ленту и YouTube.</p></div>
+        <div class="dia dia--fmt" aria-hidden="true">
+          <div class="fmt"><i class="f916"></i><i class="f45"></i><i class="f11"></i><i class="f169"></i></div>
+          <span class="count"><b data-count="1">1</b><svg><use href="#i-arrow"/></svg><b data-count="4">4</b></span><span class="dia__cap" data-i18n="res.5c">идея → формата</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 07 ПРОЦЕСС: горизонтальный скролл -->
+<section class="process" id="process" aria-labelledby="proc-title">
+  <div class="process__pin">
+    <div class="process__top wrap">
+      <h2 class="h2 process__title" id="proc-title" data-i18n="proc.t">КАК ЭТО РАБОТАЕТ</h2>
+      <div class="process__bar" aria-hidden="true"><i></i></div>
+    </div>
+    <ol class="process__track">
+      <li class="step">
+        <span class="step__n">01</span>
+        <div class="step__vis vis-chat" aria-hidden="true"><div class="bubble"><span data-i18n="proc.v1">Хочу ролик, где кроссовки бегут по облакам</span><i class="caret"></i></div></div>
+        <h3 data-i18n="proc.1t">Расскажи идею</h3><p data-i18n="proc.1">Отправь описание продукта, бренда или видео, которое хочешь получить.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">02</span>
+        <div class="step__vis vis-board" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h3 data-i18n="proc.2t">Мы создаём концепцию</h3><p data-i18n="proc.2">Подбираем стиль, сценарий и визуальное направление.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">03</span>
+        <div class="step__vis vis-timeline" aria-hidden="true"><div class="tl"><i></i><i></i><i></i></div><div class="tl"><i></i><i></i></div><div class="tl tl--audio"></div><span class="playhead"></span></div>
+        <h3 data-i18n="proc.3t">Магия начинается</h3><p data-i18n="proc.3">Создаём AI-видео, добавляем движение, монтаж, звук и эффекты.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">04</span>
+        <div class="step__vis vis-done" aria-hidden="true"><div class="file"><b>final_9x16.mp4</b><i></i></div><div class="file"><b>final_1x1.mp4</b><i></i></div><div class="file"><b>final_16x9.mp4</b><i></i></div></div>
+        <h3 data-i18n="proc.4t">Твой контент готов</h3><p data-i18n="proc.4">Получаешь готовые видео для публикации.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 08 ДОВЕРИЕ -->
+<section class="trust" aria-labelledby="trust-title">
+  <div class="wrap trust__grid">
+    <h2 class="h2 trust__title" id="trust-title" data-split="words"><span class="line" data-i18n="trust.t1">МЕНЬШЕ РИСКА.</span> <span class="line" data-i18n="trust.t2">БОЛЬШЕ КРЕАТИВА.</span></h2>
+    <ul class="checks">
+      <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.1t">Концепция до производства</h3><p data-i18n="trust.1">Сначала согласуем идею, стиль и сценарий. Генерацию начинаем только после твоего «да».</p></div></li>
+      <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.2t">Прозрачные сроки и стоимость</h3><p data-i18n="trust.2">Называем дату и цену до старта работы.</p></div></li>
+      <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.3t">Правки по договорённости</h3><p data-i18n="trust.3">Количество раундов правок фиксируем заранее.</p></div></li>
+      <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.4t">Форматы для соцсетей</h3><p data-i18n="trust.4">Вертикаль, квадрат и горизонталь под требования площадок.</p></div></li>
+      <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.5t">Варианты для тестов</h3><p data-i18n="trust.5">Можем сделать несколько версий ролика, чтобы сравнить их в рекламе.</p></div></li>
+    </ul>
+  </div>
+  <!-- Отзывы: замените плейсхолдеры реальными отзывами с разрешения клиентов -->
+  <div class="wrap">
+    <h3 class="quotes__title" data-i18n="trust.q">Отзывы клиентов</h3>
+    <ul class="quotes">
+      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
+      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
+      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 09 ТАРИФЫ. Цены: замените текст в .tier__price -->
+<section class="pricing" id="pricing" aria-labelledby="price-title">
+  <div class="wrap">
+    <h2 class="h2 pricing__title" id="price-title" data-split="words"><span class="line" data-i18n="price.t1">НАЧНИ С ОДНОГО ВИДЕО.</span> <span class="line" data-i18n="price.t2">ЗАХВАТИ ВСЮ ЛЕНТУ.</span></h2>
+    <div class="tiers">
+      <article class="tier tilt reveal" data-reveal="rise">
+        <h3 class="tier__name">STARTER</h3><p class="tier__for" data-i18n="price.s">Для тестирования AI-контента.</p>
+        <ul><li data-i18n="price.s1">Одно видео под одну платформу</li><li data-i18n="price.s2">Согласование концепции</li><li data-i18n="price.s3">Раунды правок по договорённости</li></ul>
+        <p class="tier__price" data-i18n="price.ask">Стоимость по запросу</p>
+        <a class="btn btn--ghost magnetic" href="#contact" data-prefill="Тариф STARTER" data-i18n="cta.discuss">Обсудить проект</a>
+      </article>
+      <article class="tier tier--hot tilt reveal" data-reveal="rise">
+        <span class="tier__badge" data-i18n="price.rec">Рекомендуем</span>
+        <h3 class="tier__name">CREATOR</h3><p class="tier__for" data-i18n="price.c">Для регулярного присутствия в социальных сетях.</p>
+        <ul><li data-i18n="price.c1">Серия роликов в едином стиле</li><li data-i18n="price.c2">Форматы под Reels, TikTok и Shorts</li><li data-i18n="price.c3">Контент-план на период</li></ul>
+        <p class="tier__price" data-i18n="price.ask">Стоимость по запросу</p>
+        <a class="btn btn--night magnetic" href="#contact" data-prefill="Тариф CREATOR" data-i18n="cta.discuss">Обсудить проект</a>
+      </article>
+      <article class="tier tilt reveal" data-reveal="rise">
+        <h3 class="tier__name">BRAND BOOST</h3><p class="tier__for" data-i18n="price.b">Для рекламных кампаний и масштабного производства.</p>
+        <ul><li data-i18n="price.b1">Кампания из нескольких роликов</li><li data-i18n="price.b2">Варианты для A/B-тестов</li><li data-i18n="price.b3">Все форматы для платформ</li></ul>
+        <p class="tier__price" data-i18n="price.ask">Стоимость по запросу</p>
+        <a class="btn btn--ghost magnetic" href="#contact" data-prefill="Тариф BRAND BOOST" data-i18n="cta.discuss">Обсудить проект</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ФИНАЛЬНЫЙ CTA. Отправка: укажите endpoint в data-endpoint формы (Formspree, свой API и т.п.) -->
+<section class="final" id="contact" aria-labelledby="final-title">
+  <div class="final__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="final__title" id="final-title" data-split="words"><span class="line" data-i18n="final.t1">ТВОЙ СЛЕДУЮЩИЙ</span> <span class="line" data-i18n="final.t2">ВИРУСНЫЙ РОЛИК</span> <span class="line" data-i18n="final.t3">НАЧИНАЕТСЯ ЗДЕСЬ.</span></h2>
+    <div class="final__grid">
+      <p class="final__lead reveal" data-reveal="up" data-i18n="final.lead">Есть продукт, бренд или просто сумасшедшая идея? Давай превратим её в видео, которое захочется смотреть.</p>
+      <form class="form" id="lead-form" novalidate data-endpoint="">
+        <div class="field"><label for="f-name" data-i18n="form.name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="e-name"><span class="field__err" id="e-name" aria-live="polite"></span></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field__err" id="e-email" aria-live="polite"></span></div>
+        <div class="field field--wide"><label for="f-link" data-i18n="form.link">Ссылка на бренд или соцсеть</label><input id="f-link" name="link" type="text" inputmode="url" placeholder="instagram.com/brand" aria-describedby="e-link"><span class="field__err" id="e-link" aria-live="polite"></span></div>
+        <div class="field field--wide"><label for="f-msg" data-i18n="form.msg">Что хочешь создать?</label><textarea id="f-msg" name="message" rows="3" required minlength="10" aria-describedby="e-msg"></textarea><span class="field__err" id="e-msg" aria-live="polite"></span></div>
+        <button class="mega magnetic" type="submit"><span class="mega__in"><span data-i18n="final.btn">ДАВАЙ СОЗДАДИМ ЧТО-ТО КРУТОЕ</span> <svg><use href="#i-arrow"/></svg></span></button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__word" aria-hidden="true">THUMB<span>STOP</span></p>
+    <div class="foot__row">
+      <p class="foot__tag" data-i18n="foot.tag">Видео, на которых палец останавливается.</p>
+      <ul class="foot__social">
+        <li><a href="https://instagram.com/" rel="noopener" target="_blank">Instagram</a></li>
+        <li><a href="https://tiktok.com/" rel="noopener" target="_blank">TikTok</a></li>
+        <li><a href="https://youtube.com/" rel="noopener" target="_blank">YouTube</a></li>
+        <li><a href="https://behance.net/" rel="noopener" target="_blank">Behance</a></li>
+      </ul>
+      <a class="foot__mail" href="mailto:hello@thumbstop.studio">hello@thumbstop.studio</a>
+      <a class="btn btn--lime btn--sm magnetic" href="#contact" data-i18n="cta.start">Начать проект</a>
+    </div>
+    <div class="foot__legal"><span>© <span data-year>2026</span> THUMBSTOP</span><a href="privacy.html" data-i18n="foot.privacy">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<a class="float-cta magnetic" href="#contact" aria-hidden="true" tabindex="-1"><svg><use href="#i-star"/></svg><span data-i18n="cta.create">Создать моё видео</span></a>
+
+<dialog class="viewer" id="viewer" aria-label="Просмотр работы">
+  <button class="viewer__close" type="button" data-i18n-aria="viewer.close" aria-label="Закрыть">✕</button>
+  <div class="viewer__stage"></div>
+  <p class="viewer__cap"></p>
+</dialog>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
