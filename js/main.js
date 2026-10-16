@@ -14,68 +14,41 @@ const RU = {}, RU_ARIA = {};
 $$('[data-i18n]').forEach(el => { RU[el.dataset.i18n] = el.textContent.trim(); });
 $$('[data-i18n-aria]').forEach(el => { RU_ARIA[el.dataset.i18nAria] = el.getAttribute('aria-label'); });
 
-/* ---------- демо-сцены и медиа-слоты ---------- */
-const SCENES = {
-  orb: '<i class="halo"></i><i class="orb"></i><i class="shadow"></i>',
-  bottle: '<i class="ped"></i><i class="bot"></i><i class="shine"></i><i class="spark"></i>',
-  blob: '<i class="blob"></i><i class="blob2"></i>',
-  tunnel: '<i></i><i></i><i></i><i></i>',
-  splash: '<i class="can"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i>',
-  grid: '<i class="floor"></i><i class="board"></i>',
-  stripes: '<i class="band"></i><i class="band"></i><i class="band"></i>',
-  ring: '<i class="torus"></i><i class="dot"></i>'
-};
+/* ---------- static campaign artwork; videos load only on request ---------- */
+const ART = ['attention', 'social', 'studio', 'perfume', 'sneaker', 'headphones', 'soda', 'storyboard'];
+function artwork(name, eager = false) {
+  const pic = document.createElement('picture'); pic.className = 'art';
+  const source = document.createElement('source'); source.type = 'image/webp'; source.srcset = `assets/images/${name}.webp`;
+  const im = document.createElement('img'); im.src = `assets/images/${name}.png`;
+  im.alt = ''; im.width = 1024; im.height = 1024; im.decoding = 'async'; im.loading = eager ? 'eager' : 'lazy';
+  pic.append(source, im); return pic;
+}
 function buildClip(el) {
   if (el.dataset.built) return;
   el.dataset.built = '1';
-  const s = SCENES[el.dataset.scene] ? el.dataset.scene : 'orb';
-  el.classList.add('s-' + s);
-  el.insertAdjacentHTML('afterbegin', SCENES[s]);
-  if (el.dataset.video) {
-    const v = document.createElement('video');
-    v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
-    v.setAttribute('aria-hidden', 'true');
-    if (el.dataset.poster) v.poster = el.dataset.poster;
-    v.dataset.src = el.dataset.video;
-    el.appendChild(v);
-  }
+  const name = ART.includes(el.dataset.art) ? el.dataset.art : 'social';
+  if (!el.querySelector('picture, .media-poster')) el.appendChild(artwork(name, el.closest('.feed') !== null));
 }
-// Видео грузится и играет только рядом с экраном; CSS-анимации сцен тоже на паузе вне экрана
-const liveIO = new IntersectionObserver(es => es.forEach(e => {
-  const el = e.target, v = el.querySelector('video');
-  el.classList.toggle('is-live', e.isIntersecting && !RM);
-  if (!v) return;
-  if (e.isIntersecting) { if (!v.getAttribute('src')) v.src = v.dataset.src; if (!RM) v.play().catch(() => {}); }
-  else v.pause();
-}), { rootMargin: '150px 0px' });
-const initClip = el => { buildClip(el); liveIO.observe(el); };
-
-/* ---------- hero: лента клипов или фоновое видео ---------- */
 const feed = $('[data-feed]');
-const heroVideo = $('.hero__video');
-if (heroVideo && heroVideo.dataset.src) {
-  heroVideo.src = heroVideo.dataset.src; heroVideo.classList.add('is-on');
-  if (!RM) heroVideo.play().catch(() => {});
-} else if (feed) {
-  const scenes = ['blob', 'bottle', 'tunnel', 'orb', 'splash', 'grid', 'ring', 'stripes'];
-  const themes = ['pink', 'orange', 'violet', 'lime', 'blue'];
-  const cols = innerWidth < 760 ? 3 : 4;
+if (feed) {
+  const names = ['sneaker', 'perfume', 'headphones', 'soda', 'social', 'studio', 'storyboard', 'attention'];
+  const themes = ['pink', 'orange', 'violet', 'blue'];
+  // Two compact columns on phones, three on desktop. No generated geometry or canvas.
+  const cols = matchMedia('(max-width: 760px)').matches ? 2 : 3;
   for (let c = 0; c < cols; c++) {
-    const col = document.createElement('div');
-    col.className = 'feed__col';
-    col.style.setProperty('--d', (36 + c * 8) + 's');
-    let html = '';
-    for (let i = 0; i < 4; i++) html += `<div class="clip" data-scene="${scenes[(c * 3 + i) % 8]}" data-theme="${themes[(c * 2 + i) % 5]}"></div>`;
-    col.innerHTML = html + html; // дубль для бесшовного цикла
+    const col = document.createElement('div'); col.className = 'feed__col';
+    col.style.setProperty('--d', (48 + c * 8) + 's');
+    for (let i = 0; i < 6; i++) {
+      const clip = document.createElement('div'); clip.className = 'clip';
+      clip.dataset.art = names[(c * 2 + i % 3) % names.length];
+      clip.dataset.theme = themes[c]; col.appendChild(clip); buildClip(clip);
+    }
     feed.appendChild(col);
   }
-  // «Thumb-stop»: наведение на ленту останавливает её
-  if (FINE) {
-    feed.addEventListener('pointerenter', () => feed.classList.add('is-frozen'));
-    feed.addEventListener('pointerleave', () => feed.classList.remove('is-frozen'));
-  }
 }
-$$('.clip').forEach(initClip);
+$$('.clip').forEach(buildClip);
+const heroIO = new IntersectionObserver(entries => entries.forEach(e => feed && feed.classList.toggle('is-paused', !e.isIntersecting)));
+heroIO.observe($('.hero'));
 
 /* ---------- разбивка заголовков на слова / буквы ---------- */
 function split(el) {
@@ -109,13 +82,7 @@ function split(el) {
 $$('[data-split]').forEach(split);
 
 /* ---------- reveal-наблюдатель ---------- */
-const cal = $('.cal');
-if (cal) for (let i = 0; i < 28; i++) cal.appendChild(document.createElement('i'));
-$$('.cross li').forEach((li, i) => li.style.setProperty('--i', i));
 function onIn(el) {
-  if (el.querySelector('.cal')) $$('.cal i').forEach((c, i) => {
-    if ([0, 2, 4].includes(i % 7)) setTimeout(() => c.classList.add('on'), RM ? 0 : 300 + i * 40);
-  });
   $$('[data-count]', el).forEach(n => {
     const to = +n.dataset.count; let k = 1;
     if (RM || to <= 1) return;
@@ -139,17 +106,28 @@ const tapeAnims = tapes.map(el => el.getAnimations ? el.getAnimations()[0] : nul
 
 /* ---------- навигация, меню, плавающая CTA ---------- */
 const nav = $('#nav'), burger = $('.burger'), menu = $('#menu');
+menu.inert = true;
 function setMenu(open) {
+  menu.inert = !open;
+  $('#main').inert = open;
+  $('.foot').inert = open;
   menu.classList.toggle('is-open', open);
   menu.setAttribute('aria-hidden', String(!open));
   burger.setAttribute('aria-expanded', String(open));
   burger.setAttribute('aria-label', open ? (lang === 'ru' ? 'Закрыть меню' : 'Close menu') : (lang === 'ru' ? 'Открыть меню' : 'Open menu'));
   document.body.style.overflow = open ? 'hidden' : '';
-  if (open) setTimeout(() => $('a', menu).focus(), 300);
+  if (open) requestAnimationFrame(() => $('a', menu).focus());
 }
 burger.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
 $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
-addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); burger.focus(); } });
+addEventListener('keydown', e => {
+  if (e.key === 'Tab' && menu.classList.contains('is-open')) {
+    const items = [burger, ...$$('a,button', menu)];
+    const first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); burger.focus(); } });
 
 const floatCta = $('.float-cta');
 // Появляется после hero, прячется у формы и футера
@@ -198,6 +176,7 @@ if (FINE && !RM) {
 /* ---------- аккордеон услуг ---------- */
 const panes = $$('[data-acc] .pane');
 const WIDE = matchMedia('(min-width: 1101px)');
+WIDE.addEventListener('change', e => { if (e.matches && menu.classList.contains('is-open')) setMenu(false); });
 function openPane(p, fromTap) {
   if (p.classList.contains('is-open')) return;
   panes.forEach(x => { const on = x === p; x.classList.toggle('is-open', on); $('.pane__tab', x).setAttribute('aria-expanded', String(on)); });
@@ -223,26 +202,47 @@ $$('.chip').forEach(ch => ch.addEventListener('click', () => {
   $$('.work', works).forEach(w => w.classList.toggle('is-out', f !== 'all' && w.dataset.cat !== f));
 }));
 
-/* ---------- полноэкранный просмотр ---------- */
+/* ---------- media viewer: local MP4s and transparent PNGs ---------- */
 const viewer = $('#viewer'), stage = $('.viewer__stage', viewer), cap = $('.viewer__cap', viewer);
-let lastFocus = null;
+const credit = $('.viewer__credit', viewer), sourceLink = $('.viewer__source', viewer);
+let lastFocus = null, previousOverflow = '';
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-open-viewer]');
   if (!b) return;
-  const src = b.dataset.scene ? b : $('.clip', b);
+  const src = b.dataset.art ? b : $('.clip', b);
+  if (!src) return;
   const meta = b.closest('.work');
-  stage.innerHTML = '';
-  const c = document.createElement('div');
-  c.className = 'clip';
-  ['scene', 'theme', 'video', 'poster'].forEach(k => { if (src.dataset[k]) c.dataset[k] = src.dataset[k]; });
-  stage.appendChild(c); buildClip(c); c.classList.toggle('is-live', !RM);
-  const v = $('video', c);
-  if (v) { v.src = v.dataset.src; v.controls = true; v.muted = false; v.play().catch(() => {}); }
-  cap.textContent = meta ? `${$('.work__name', meta).textContent} — ${$('.work__cat', meta).textContent}` : 'Showreel';
-  lastFocus = b;
-  viewer.showModal();
+  stage.replaceChildren();
+  viewer.classList.toggle('has-video', !!src.dataset.video);
+  if (src.dataset.video) {
+    const v = document.createElement('video');
+    v.src = src.dataset.video; v.controls = true; v.playsInline = true; v.preload = 'metadata';
+    // Preserve the original aspect ratio rather than cropping reference videos.
+    v.addEventListener('loadedmetadata', () => viewer.classList.toggle('is-portrait', v.videoHeight > v.videoWidth));
+    v.addEventListener('error', () => {
+      if (!viewer.open || !v.isConnected) return;
+      const note = document.createElement('p'); note.className = 'media-error';
+      note.textContent = lang === 'ru' ? 'Не удалось загрузить видео. Открой источник ниже.' : 'Video could not load. Open the source below.';
+      stage.replaceChildren(note);
+    });
+    stage.appendChild(v); v.play().catch(() => {});
+  } else {
+    const c = document.createElement('div'); c.className = 'clip';
+    c.dataset.art = src.dataset.art; c.dataset.theme = src.dataset.theme || 'violet';
+    stage.appendChild(c); buildClip(c); viewer.classList.remove('is-portrait');
+  }
+  cap.textContent = meta ? $('.work__name', meta).textContent : b.dataset.title || 'THUMBSTOP';
+  credit.textContent = src.dataset.credit || (lang === 'ru' ? 'THUMBSTOP · AI-визуальный концепт' : 'THUMBSTOP · AI visual concept');
+  sourceLink.hidden = !src.dataset.source;
+  if (src.dataset.source) sourceLink.href = src.dataset.source; else sourceLink.removeAttribute('href');
+  lastFocus = b; previousOverflow = document.body.style.overflow;
+  document.body.style.overflow = 'hidden'; viewer.showModal();
 });
-viewer.addEventListener('close', () => { stage.innerHTML = ''; lastFocus && lastFocus.focus(); });
+viewer.addEventListener('close', () => {
+  const v = $('video', stage); if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+  stage.replaceChildren(); document.body.style.overflow = previousOverflow;
+  if (lastFocus) lastFocus.focus({ preventScroll: true });
+});
 $('.viewer__close').addEventListener('click', () => viewer.close());
 viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
 
@@ -278,6 +278,8 @@ form.addEventListener('submit', async e => {
   const inputs = $$('input, textarea', form);
   const bad = inputs.filter(i => !check(i));
   if (bad.length) { bad[0].focus(); return; }
+  if (!form.dataset.endpoint) { status.className = 'form__status'; status.textContent = t('noEndpoint'); return; }
+  const submit = $('button[type=submit]', form); if (submit.disabled) return; submit.disabled = true;
   status.className = 'form__status'; status.textContent = t('sending');
   const data = Object.fromEntries(new FormData(form));
   try {
@@ -285,9 +287,9 @@ form.addEventListener('submit', async e => {
     if (form.dataset.endpoint) {
       const r = await fetch(form.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
       if (!r.ok) throw new Error(r.status);
-    } else console.info('[THUMBSTOP] data-endpoint не указан, заявка не отправлена:', data);
+    }
     status.classList.add('ok'); status.textContent = t('ok'); form.reset();
-  } catch { status.textContent = t('fail'); }
+  } catch { status.textContent = t('fail'); } finally { submit.disabled = false; }
 });
 
 /* ---------- переключение языка ---------- */
@@ -311,9 +313,9 @@ track.addEventListener('scroll', () => {
   proc.style.setProperty('--p', m > 0 ? (track.scrollLeft / m).toFixed(3) : '0');
 }, { passive: true });
 function layoutProcess() {
-  const pin = !RM && innerWidth > 760 && innerHeight > 600;
+  const pin = !RM && innerWidth > 1100 && innerHeight > 780;
   proc.classList.toggle('is-pinned', pin);
-  if (!pin) { track.style.transform = ''; return; }
+  if (!pin) { track.style.transform = ''; proc.style.removeProperty('--h'); return; }
   procMax = Math.max(0, track.scrollWidth - innerWidth);
   proc.style.setProperty('--h', (innerHeight + procMax) + 'px');
 }
@@ -360,6 +362,7 @@ addEventListener('resize', () => { if (innerWidth !== lastW || proc.classList.co
 /* ---------- старт ---------- */
 $('[data-year]').textContent = new Date().getFullYear();
 layoutProcess(); frame();
+if (document.fonts) document.fonts.ready.then(() => { layoutProcess(); req(); });
 const start = () => {
   if (root.classList.contains('is-loaded')) return;
   root.classList.add('is-loaded');

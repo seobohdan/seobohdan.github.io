@@ -9,11 +9,9 @@
 <meta property="og:description" content="Reels, TikTok, product ads и брендовые кампании, созданные с помощью AI.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#14072E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;700;800;900&display=swap">
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.documentElement.classList.contains('is-loaded'))document.documentElement.classList.remove('js')},4000)</script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Перейти к содержимому</a>
@@ -59,7 +57,7 @@
 
 <main id="main">
 
-<!-- 01 HERO. Фоновое видео: укажите путь в data-src у .hero__video — оно заменит анимированную ленту. -->
+<!-- 01 HERO: static illustrated campaign feed. -->
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="hero__bg" aria-hidden="true">
     <video class="hero__video" muted loop playsinline preload="none" data-src="" poster=""></video>
@@ -71,8 +69,8 @@
   <div class="sticker sticker--b" aria-hidden="true"><i class="rec"></i>REC</div>
   <div class="sticker sticker--c" aria-hidden="true" data-i18n="hero.st1">без съёмок</div>
   <div class="sticker sticker--d" aria-hidden="true">#fyp</div>
-  <div class="gloss gloss--1" aria-hidden="true"></div>
-  <div class="gloss gloss--2" aria-hidden="true"></div>
+  
+  
   <svg class="spin-star spin-star--hero" aria-hidden="true"><use href="#i-star"/></svg>
 
   <div class="hero__inner">
@@ -88,10 +86,10 @@
         <a class="btn btn--ghost btn--lg magnetic" href="#work" data-i18n="cta.works">Смотреть наши работы</a>
       </div>
     </div>
-    <button class="reel-btn magnetic" type="button" data-open-viewer data-scene="orb" data-theme="violet" data-video="" data-title="Showreel" aria-label="Смотреть шоурил">
+    <button class="reel-btn magnetic" type="button" data-open-viewer data-art="social" data-theme="violet" data-video="assets/video/fashion0.mp4" data-source="https://ads.tiktok.com/business/en/industries/fashion-and-clothing" data-credit="Ray-Ban / TikTok for Business" data-title="Fashion: Ray-Ban" aria-label="Смотреть видеореференс Ray-Ban">
       <svg class="reel-btn__ring" viewBox="0 0 200 200" aria-hidden="true">
         <defs><path id="circ" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
-        <text><textPath href="#circ" textLength="486" lengthAdjust="spacing">PLAY SHOWREEL ✦ PLAY SHOWREEL ✦</textPath></text>
+        <text><textPath href="#circ" textLength="486" lengthAdjust="spacing">PLAY REFERENCE ✦ PLAY REFERENCE ✦</textPath></text>
       </svg>
       <span class="reel-btn__core"><svg><use href="#i-play"/></svg></span>
     </button>
@@ -117,24 +115,17 @@
     </div>
     <ul class="stop__cards">
       <li class="scard scard--violet tilt reveal" data-reveal="rise">
-        <div class="scard__vis" aria-hidden="true">
-          <svg class="timer" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"/><circle class="timer__run" cx="60" cy="60" r="50"/></svg>
-          <span class="timer__n">0:03</span>
-        </div>
+        <div class="scard__vis" aria-hidden="true"><picture class="art"><source srcset="assets/images/attention.webp" type="image/webp"><img src="assets/images/attention.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 class="scard__title" data-i18n="stop.c1t">Захватывай внимание</h3>
         <div class="scard__body"><p data-i18n="stop.c1">Яркий визуальный контент для первых секунд просмотра.</p></div>
       </li>
       <li class="scard scard--orange tilt reveal" data-reveal="rise">
-        <div class="scard__vis" aria-hidden="true">
-          <div class="minifeed"><i></i><i></i><i class="hot"></i><i></i></div>
-        </div>
+        <div class="scard__vis" aria-hidden="true"><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 class="scard__title" data-i18n="stop.c2t">Выделяйся в ленте</h3>
         <div class="scard__body"><p data-i18n="stop.c2">Необычные идеи и образы, которые сложно повторить обычной съёмкой.</p></div>
       </li>
       <li class="scard scard--blue tilt reveal" data-reveal="rise">
-        <div class="scard__vis" aria-hidden="true">
-          <div class="stack"><i></i><i></i><i></i><i></i></div>
-        </div>
+        <div class="scard__vis" aria-hidden="true"><picture class="art"><source srcset="assets/images/studio.webp" type="image/webp"><img src="assets/images/studio.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 class="scard__title" data-i18n="stop.c3t">Создавай больше</h3>
         <div class="scard__body"><p data-i18n="stop.c3">Выпускай больше креативов без постоянных съёмок и дорогих продакшен-команд.</p></div>
       </li>
@@ -142,9 +133,7 @@
   </div>
 </section>
 
-<!-- 04 SHOWREEL
-     Замена медиа: у каждого .clip укажите data-video="media/xxx.mp4" и, по желанию, data-poster="media/xxx.jpg".
-     Пока data-video пустой, показывается анимированная демо-сцена (data-scene: orb | bottle | blob | tunnel | splash | grid | stripes | ring). -->
+<!-- 04: original illustrated concepts and credited TikTok video references. -->
 <section class="reel" id="work" aria-labelledby="reel-title">
   <div class="wrap">
     <div class="reel__head">
@@ -159,40 +148,40 @@
         <button class="chip" type="button" data-filter="brand" aria-pressed="false">Brand</button>
       </div>
     </div>
-    <p class="reel__note" data-i18n="reel.note">Демо-сцены. Замените их на свои ролики перед запуском.</p>
+    <p class="reel__note" data-i18n="reel.note">Визуальные концепты студии и видеореференсы TikTok. Авторы и источники указаны в плеере.</p>
 
     <ul class="works">
       <li class="work w1" data-cat="fashion"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="blob" data-theme="pink" data-video="" data-poster="" data-parallax="0.06"></div></div>
-        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Хромовый сон</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="sneaker" data-theme="pink" data-video="assets/video/fashion4.mp4" data-source="https://ads.tiktok.com/business/en/industries/fashion-and-clothing" data-credit="Off-White / TikTok for Business"><img class="media-poster" src="assets/posters/fashion4.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async"></div><span class="work__badge" data-i18n="media.video">Видеореференс</span><span class="work__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span></div>
+        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Off-White: fashion film</span></span>
       </button></li>
       <li class="work w2" data-cat="product"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="bottle" data-theme="orange" data-video="" data-parallax="0.05"></div></div>
-        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">Флакон №7</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="perfume" data-theme="orange" data-video="" data-source="" data-credit=""><picture class="art"><source srcset="assets/images/perfume.webp" type="image/webp"><img src="assets/images/perfume.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><span class="work__badge" data-i18n="media.concept">Визуальный концепт</span><span class="work__play" aria-hidden="true">↗</span></div>
+        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">Violet No. 7</span></span>
       </button></li>
       <li class="work w3" data-cat="reels"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="stripes" data-theme="lime" data-video=""></div></div>
-        <span class="work__meta"><span class="work__cat">Viral Reels</span><span class="work__name">Петля внимания</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="attention" data-theme="lime" data-video="assets/video/coffee0.mp4" data-source="https://ads.tiktok.com/business/en/inspiration/golden-brown-coffee" data-credit="Golden Brown Coffee / TikTok for Business"><img class="media-poster" src="assets/posters/coffee0.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async"></div><span class="work__badge" data-i18n="media.video">Видеореференс</span><span class="work__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span></div>
+        <span class="work__meta"><span class="work__cat">Viral Reels</span><span class="work__name">Golden Brown Coffee</span></span>
       </button></li>
       <li class="work w4" data-cat="food"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="splash" data-theme="orange" data-video=""></div></div>
-        <span class="work__meta"><span class="work__cat">Food &amp; Beverage</span><span class="work__name">Газировка в невесомости</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="soda" data-theme="orange" data-video="assets/video/soda0.mp4" data-source="https://ads.tiktok.com/business/en/inspiration/sodastream-case-study" data-credit="SodaStream / TikTok for Business"><img class="media-poster" src="assets/posters/soda0.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async"></div><span class="work__badge" data-i18n="media.video">Видеореференс</span><span class="work__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span></div>
+        <span class="work__meta"><span class="work__cat">Food &amp; Beverage</span><span class="work__name">SodaStream: social ad</span></span>
       </button></li>
       <li class="work w5" data-cat="music"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="tunnel" data-theme="violet" data-video="" data-parallax="0.08"></div></div>
-        <span class="work__meta"><span class="work__cat">Music &amp; Entertainment</span><span class="work__name">Неоновый тоннель</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="headphones" data-theme="violet" data-video="assets/video/sony.mp4" data-source="https://ads.tiktok.com/business/creativecenter/topads/7641685063844134929/pc/en" data-credit="Sony / TikTok Creative Center"><img class="media-poster" src="assets/posters/sony.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async"></div><span class="work__badge" data-i18n="media.video">Видеореференс</span><span class="work__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span></div>
+        <span class="work__meta"><span class="work__cat">Music &amp; Entertainment</span><span class="work__name">Sony: sound in motion</span></span>
       </button></li>
       <li class="work w6" data-cat="brand"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="grid" data-theme="blue" data-video="" data-parallax="0.05"></div></div>
-        <span class="work__meta"><span class="work__cat">Brand Campaigns</span><span class="work__name">Город без гравитации</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="storyboard" data-theme="blue" data-video="assets/video/fashion0.mp4" data-source="https://ads.tiktok.com/business/en/industries/fashion-and-clothing" data-credit="Ray-Ban / TikTok for Business"><img class="media-poster" src="assets/posters/fashion0.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async"></div><span class="work__badge" data-i18n="media.video">Видеореференс</span><span class="work__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span></div>
+        <span class="work__meta"><span class="work__cat">Brand Campaigns</span><span class="work__name">Ray-Ban: brand story</span></span>
       </button></li>
       <li class="work w7" data-cat="fashion"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="ring" data-theme="lime" data-video=""></div></div>
-        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Жидкий шёлк</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="social" data-theme="lime" data-video="" data-source="" data-credit=""><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><span class="work__badge" data-i18n="media.concept">Визуальный концепт</span><span class="work__play" aria-hidden="true">↗</span></div>
+        <span class="work__meta"><span class="work__cat">Fashion &amp; Beauty</span><span class="work__name">Social, reimagined</span></span>
       </button></li>
       <li class="work w8" data-cat="product"><button class="work__btn" type="button" data-open-viewer data-cursor="Смотреть">
-        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-scene="orb" data-theme="blue" data-video=""></div></div>
-        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">Наушники на орбите</span></span>
+        <div class="work__frame reveal" data-reveal="frame"><div class="clip" data-art="studio" data-theme="blue" data-video="" data-source="" data-credit=""><picture class="art"><source srcset="assets/images/studio.webp" type="image/webp"><img src="assets/images/studio.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><span class="work__badge" data-i18n="media.concept">Визуальный концепт</span><span class="work__play" aria-hidden="true">↗</span></div>
+        <span class="work__meta"><span class="work__cat">Product Commercials</span><span class="work__name">The creative studio</span></span>
       </button></li>
     </ul>
   </div>
@@ -206,7 +195,7 @@
       <article class="pane pane--pink is-open">
         <button class="pane__tab" type="button" aria-expanded="true" aria-controls="p1"><span class="pane__n">01</span><span class="pane__name">AI Reels &amp; TikTok</span></button>
         <div class="pane__body" id="p1">
-          <div class="pane__vis vis-phones" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="pane__vis service-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
           <div class="pane__copy"><h3>AI Reels &amp; TikTok</h3><p data-i18n="svc.1">Короткие динамичные видео для Instagram, TikTok и YouTube Shorts.</p>
           <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Reels & TikTok" data-i18n="cta.want">Хочу такое</a></div>
         </div>
@@ -214,7 +203,7 @@
       <article class="pane pane--orange">
         <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p2"><span class="pane__n">02</span><span class="pane__name">AI Product Ads</span></button>
         <div class="pane__body" id="p2">
-          <div class="pane__vis"><div class="clip" data-scene="bottle" data-theme="orange" data-video=""></div></div>
+          <div class="pane__vis service-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/perfume.webp" type="image/webp"><img src="assets/images/perfume.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
           <div class="pane__copy"><h3>AI Product Ads</h3><p data-i18n="svc.2">Рекламные ролики продуктов без необходимости организовывать полноценную съёмку.</p>
           <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Product Ads" data-i18n="cta.want">Хочу такое</a></div>
         </div>
@@ -222,7 +211,7 @@
       <article class="pane pane--violet">
         <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p3"><span class="pane__n">03</span><span class="pane__name">AI Fashion &amp; Lifestyle</span></button>
         <div class="pane__body" id="p3">
-          <div class="pane__vis"><div class="clip" data-scene="blob" data-theme="pink" data-video=""></div></div>
+          <div class="pane__vis service-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/sneaker.webp" type="image/webp"><img src="assets/images/sneaker.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
           <div class="pane__copy"><h3>AI Fashion &amp; Lifestyle</h3><p data-i18n="svc.3">Кинематографичные fashion-кампании, виртуальные модели, фантастические локации.</p>
           <a class="btn btn--lime magnetic" href="#contact" data-prefill="AI Fashion & Lifestyle" data-i18n="cta.want">Хочу такое</a></div>
         </div>
@@ -230,7 +219,7 @@
       <article class="pane pane--blue">
         <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p4"><span class="pane__n">04</span><span class="pane__name">AI Brand Campaigns</span></button>
         <div class="pane__body" id="p4">
-          <div class="pane__vis"><div class="clip" data-scene="grid" data-theme="blue" data-video=""></div></div>
+          <div class="pane__vis service-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/headphones.webp" type="image/webp"><img src="assets/images/headphones.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
           <div class="pane__copy"><h3>AI Brand Campaigns</h3><p data-i18n="svc.4">Креативные рекламные концепции и серии видеороликов для продвижения брендов.</p>
           <a class="btn btn--lime magnetic" href="#contact" data-prefill="AI Brand Campaigns" data-i18n="cta.want">Хочу такое</a></div>
         </div>
@@ -238,7 +227,7 @@
       <article class="pane pane--lime">
         <button class="pane__tab" type="button" aria-expanded="false" aria-controls="p5"><span class="pane__n">05</span><span class="pane__name">AI Video from Your Content</span></button>
         <div class="pane__body" id="p5">
-          <div class="pane__vis vis-photo" aria-hidden="true"><div class="photo"><i></i></div><div class="photo photo--live"><div class="clip" data-scene="orb" data-theme="violet" data-video=""></div></div></div>
+          <div class="pane__vis service-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/storyboard.webp" type="image/webp"><img src="assets/images/storyboard.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
           <div class="pane__copy"><h3>AI Video from Your Content</h3><p data-i18n="svc.5">Превращение существующих фотографий, изображений и идей в анимированные видеоролики.</p>
           <a class="btn btn--night magnetic" href="#contact" data-prefill="AI Video from Your Content" data-i18n="cta.want">Хочу такое</a></div>
         </div>
@@ -254,26 +243,23 @@
     <ol class="spec">
       <li class="spec__row reveal" data-reveal="wipe">
         <div class="spec__copy"><h3 data-i18n="res.1t">Больше шансов привлечь внимание</h3><p data-i18n="res.1">Первые секунды решают, досмотрят ли ролик. Мы строим видео вокруг сильного кадра в самом начале.</p></div>
-        <div class="dia dia--hook" aria-hidden="true"><div class="hook"><i class="hook__fill"></i><span class="hook__mark"></span></div><span class="dia__cap" data-i18n="res.1c">хук в первые секунды</span></div>
+        <div class="dia result-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/attention.webp" type="image/webp"><img src="assets/images/attention.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
       </li>
       <li class="spec__row reveal" data-reveal="wipe">
         <div class="spec__copy"><h3 data-i18n="res.2t">Контент для регулярных публикаций</h3><p data-i18n="res.2">Серия роликов в одном стиле закрывает контент-план на недели вперёд.</p></div>
-        <div class="dia dia--cal" aria-hidden="true"><div class="cal"></div></div>
+        <div class="dia result-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
       </li>
       <li class="spec__row reveal" data-reveal="wipe">
         <div class="spec__copy"><h3 data-i18n="res.3t">Быстрое тестирование рекламных концепций</h3><p data-i18n="res.3">Несколько версий одной идеи: разные хуки, цвета и финалы. Запускай и смотри, что работает.</p></div>
-        <div class="dia dia--ab" aria-hidden="true"><div class="ab"><span>A</span><span>B</span><span>C</span></div></div>
+        <div class="dia result-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/storyboard.webp" type="image/webp"><img src="assets/images/storyboard.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
       </li>
       <li class="spec__row reveal" data-reveal="wipe">
         <div class="spec__copy"><h3 data-i18n="res.4t">Производство без традиционных съёмочных затрат</h3><p data-i18n="res.4">Не нужно арендовать студию, свет и локации или собирать съёмочную группу.</p></div>
-        <div class="dia dia--cross" aria-hidden="true"><ul class="cross"><li data-i18n="res.4a">студия</li><li data-i18n="res.4b">свет</li><li data-i18n="res.4c">локация</li><li data-i18n="res.4d">съёмочная группа</li></ul></div>
+        <div class="dia result-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/studio.webp" type="image/webp"><img src="assets/images/studio.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
       </li>
       <li class="spec__row reveal" data-reveal="wipe">
         <div class="spec__copy"><h3 data-i18n="res.5t">Адаптация под разные платформы</h3><p data-i18n="res.5">Одна идея превращается в ролики под Reels, TikTok, ленту и YouTube.</p></div>
-        <div class="dia dia--fmt" aria-hidden="true">
-          <div class="fmt"><i class="f916"></i><i class="f45"></i><i class="f11"></i><i class="f169"></i></div>
-          <span class="count"><b data-count="1">1</b><svg><use href="#i-arrow"/></svg><b data-count="4">4</b></span><span class="dia__cap" data-i18n="res.5c">идея → формата</span>
-        </div>
+        <div class="dia result-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
       </li>
     </ol>
   </div>
@@ -289,22 +275,22 @@
     <ol class="process__track">
       <li class="step">
         <span class="step__n">01</span>
-        <div class="step__vis vis-chat" aria-hidden="true"><div class="bubble"><span data-i18n="proc.v1">Хочу ролик, где кроссовки бегут по облакам</span><i class="caret"></i></div></div>
+        <div class="step__vis process-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/sneaker.webp" type="image/webp"><img src="assets/images/sneaker.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 data-i18n="proc.1t">Расскажи идею</h3><p data-i18n="proc.1">Отправь описание продукта, бренда или видео, которое хочешь получить.</p>
       </li>
       <li class="step">
         <span class="step__n">02</span>
-        <div class="step__vis vis-board" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="step__vis process-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/storyboard.webp" type="image/webp"><img src="assets/images/storyboard.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 data-i18n="proc.2t">Мы создаём концепцию</h3><p data-i18n="proc.2">Подбираем стиль, сценарий и визуальное направление.</p>
       </li>
       <li class="step">
         <span class="step__n">03</span>
-        <div class="step__vis vis-timeline" aria-hidden="true"><div class="tl"><i></i><i></i><i></i></div><div class="tl"><i></i><i></i></div><div class="tl tl--audio"></div><span class="playhead"></span></div>
+        <div class="step__vis process-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/studio.webp" type="image/webp"><img src="assets/images/studio.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 data-i18n="proc.3t">Магия начинается</h3><p data-i18n="proc.3">Создаём AI-видео, добавляем движение, монтаж, звук и эффекты.</p>
       </li>
       <li class="step">
         <span class="step__n">04</span>
-        <div class="step__vis vis-done" aria-hidden="true"><div class="file"><b>final_9x16.mp4</b><i></i></div><div class="file"><b>final_1x1.mp4</b><i></i></div><div class="file"><b>final_16x9.mp4</b><i></i></div></div>
+        <div class="step__vis process-art" aria-hidden="true"><picture class="art"><source srcset="assets/images/social.webp" type="image/webp"><img src="assets/images/social.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
         <h3 data-i18n="proc.4t">Твой контент готов</h3><p data-i18n="proc.4">Получаешь готовые видео для публикации.</p>
       </li>
     </ol>
@@ -323,13 +309,25 @@
       <li class="reveal" data-reveal="check"><span class="tick"><svg><use href="#i-check"/></svg></span><div><h3 data-i18n="trust.5t">Варианты для тестов</h3><p data-i18n="trust.5">Можем сделать несколько версий ролика, чтобы сравнить их в рекламе.</p></div></li>
     </ul>
   </div>
-  <!-- Отзывы: замените плейсхолдеры реальными отзывами с разрешения клиентов -->
+  <!-- Demonstration testimonials and names. Replace with verified customer reviews before publication. -->
   <div class="wrap">
     <h3 class="quotes__title" data-i18n="trust.q">Отзывы клиентов</h3>
     <ul class="quotes">
-      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
-      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
-      <li class="quote quote--empty"><span class="quote__tag" data-i18n="trust.ph">Место для отзыва</span><p data-i18n="trust.phText">Здесь появится настоящий отзыв клиента после первых проектов.</p><span class="quote__who"><i></i><span data-i18n="trust.phWho">Имя, компания</span></span></li>
+      <li class="quote quote--filled">
+        <div class="quote__top"><span class="quote__tag">Product Ads</span><span class="quote__demo" data-i18n="trust.demo">Демо</span></div>
+        <p data-i18n="trust.review1">«Пришли с идеей для запуска нового продукта. Получили яркий ролик, который точно передаёт настроение бренда. Особенно понравилось, что концепцию согласовали до начала работы.»</p>
+        <span class="quote__who"><i class="quote__avatar quote__avatar--1" aria-hidden="true">AK</i><span><span class="quote__name" data-i18n="trust.name1">Анна К.</span><span class="quote__role" data-i18n="trust.role1">Бренд косметики</span></span></span>
+      </li>
+      <li class="quote quote--filled">
+        <div class="quote__top"><span class="quote__tag">AI Reels &amp; TikTok</span><span class="quote__demo" data-i18n="trust.demo">Демо</span></div>
+        <p data-i18n="trust.review2">«Нужны были короткие видео для рекламы и соцсетей. Команда предложила несколько визуальных направлений и подготовила ролики в нужных форматах. Всё понятно по этапам и без лишних созвонов.»</p>
+        <span class="quote__who"><i class="quote__avatar quote__avatar--2" aria-hidden="true">MR</i><span><span class="quote__name" data-i18n="trust.name2">Максим Р.</span><span class="quote__role" data-i18n="trust.role2">Интернет-магазин</span></span></span>
+      </li>
+      <li class="quote quote--filled">
+        <div class="quote__top"><span class="quote__tag">Fashion &amp; Lifestyle</span><span class="quote__demo" data-i18n="trust.demo">Демо</span></div>
+        <p data-i18n="trust.review3">«Хотелось необычную fashion-подачу без большой съёмочной команды. Получился цельный визуальный стиль для серии публикаций. Правки обсудили заранее, поэтому работать было комфортно.»</p>
+        <span class="quote__who"><i class="quote__avatar quote__avatar--3" aria-hidden="true">KM</i><span><span class="quote__name" data-i18n="trust.name3">Екатерина М.</span><span class="quote__role" data-i18n="trust.role3">Fashion-бренд</span></span></span>
+      </li>
     </ul>
   </div>
 </section>
@@ -368,8 +366,8 @@
   <div class="wrap">
     <h2 class="final__title" id="final-title" data-split="words"><span class="line" data-i18n="final.t1">ТВОЙ СЛЕДУЮЩИЙ</span> <span class="line" data-i18n="final.t2">ВИРУСНЫЙ РОЛИК</span> <span class="line" data-i18n="final.t3">НАЧИНАЕТСЯ ЗДЕСЬ.</span></h2>
     <div class="final__grid">
-      <p class="final__lead reveal" data-reveal="up" data-i18n="final.lead">Есть продукт, бренд или просто сумасшедшая идея? Давай превратим её в видео, которое захочется смотреть.</p>
-      <form class="form" id="lead-form" novalidate data-endpoint="">
+      <div class="final__intro"><div class="final__art" aria-hidden="true"><picture class="art"><source srcset="assets/images/attention.webp" type="image/webp"><img src="assets/images/attention.png" alt="" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><p class="final__lead reveal" data-reveal="up" data-i18n="final.lead">Есть продукт, бренд или просто сумасшедшая идея? Давай превратим её в видео, которое захочется смотреть.</p>
+      </div><form class="form" id="lead-form" novalidate data-endpoint="">
         <div class="field"><label for="f-name" data-i18n="form.name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="e-name"><span class="field__err" id="e-name" aria-live="polite"></span></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><span class="field__err" id="e-email" aria-live="polite"></span></div>
         <div class="field field--wide"><label for="f-link" data-i18n="form.link">Ссылка на бренд или соцсеть</label><input id="f-link" name="link" type="text" inputmode="url" placeholder="instagram.com/brand" aria-describedby="e-link"><span class="field__err" id="e-link" aria-live="polite"></span></div>
@@ -406,7 +404,7 @@
 <dialog class="viewer" id="viewer" aria-label="Просмотр работы">
   <button class="viewer__close" type="button" data-i18n-aria="viewer.close" aria-label="Закрыть">✕</button>
   <div class="viewer__stage"></div>
-  <p class="viewer__cap"></p>
+  <p class="viewer__cap"></p><div class="viewer__info"><span class="viewer__credit"></span><a class="viewer__source" target="_blank" rel="noopener noreferrer" data-i18n="media.source">Источник</a></div>
 </dialog>
 
 <script src="js/i18n.js"></script>

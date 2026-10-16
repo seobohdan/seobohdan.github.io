@@ -2,6 +2,7 @@
    английский перевод — ниже. Чтобы добавить язык, добавьте объект с теми же ключами. */
 window.I18N = {
   en: {
+    "media.video":"Video reference","media.concept":"Visual concept","media.source":"Source",
     "skip":"Skip to content",
     "nav.work":"Work","nav.services":"Services","nav.process":"Process","nav.pricing":"Pricing",
     "cta.start":"Start a project","cta.create":"Create my video","cta.works":"See our work","cta.want":"I want this","cta.discuss":"Discuss a project",
@@ -12,7 +13,7 @@ window.I18N = {
     "stop.c1t":"Grab attention","stop.c1":"Bold visuals built for the first seconds of a view.",
     "stop.c2t":"Stand out in the feed","stop.c2":"Ideas and imagery that a regular shoot can't easily repeat.",
     "stop.c3t":"Make more","stop.c3":"Ship more creatives without constant shoots or expensive production crews.",
-    "reel.t1":"FEWER WORDS.","reel.t2":"MORE WOW.","reel.all":"All","reel.note":"Demo scenes. Replace them with your own videos before launch.",
+    "reel.t1":"FEWER WORDS.","reel.t2":"MORE WOW.","reel.all":"All","reel.note":"Original visual concepts and TikTok video references. Credits and sources are shown in the player.",
     "svc.t1":"YOUR IDEAS. OUR AI.","svc.t2":"NO LIMITS.",
     "svc.1":"Short, punchy videos for Instagram, TikTok and YouTube Shorts.",
     "svc.2":"Product commercials without organising a full shoot.",
@@ -36,7 +37,13 @@ window.I18N = {
     "trust.3t":"Revisions as agreed","trust.3":"The number of revision rounds is fixed in advance.",
     "trust.4t":"Formats for social media","trust.4":"Vertical, square and horizontal, matched to each platform's specs.",
     "trust.5t":"Variants for testing","trust.5":"We can make several versions of a video to compare in your ads.",
-    "trust.q":"Client reviews","trust.ph":"Review placeholder","trust.phText":"A real client review will appear here after our first projects.","trust.phWho":"Name, company",
+    "trust.q":"Client reviews","trust.demo":"Demo",
+    "trust.review1":"“We came with an idea for a new product launch. The result was a vibrant video that captured our brand’s mood. We especially appreciated agreeing on the concept before production started.”",
+    "trust.name1":"Anna K.","trust.role1":"Beauty brand",
+    "trust.review2":"“We needed short videos for ads and social media. The team suggested several visual directions and delivered the formats we needed. The process was clear, with no unnecessary calls.”",
+    "trust.name2":"Maksym R.","trust.role2":"Online store",
+    "trust.review3":"“We wanted an unusual fashion direction without a large film crew. We got a consistent visual style for a series of posts. Agreeing on revisions in advance made the process comfortable.”",
+    "trust.name3":"Kateryna M.","trust.role3":"Fashion brand",
     "price.t1":"START WITH ONE VIDEO.","price.t2":"OWN THE WHOLE FEED.",
     "price.s":"For testing AI content.","price.s1":"One video for one platform","price.s2":"Concept approval","price.s3":"Revision rounds as agreed",
     "price.c":"For a regular social media presence.","price.c1":"A series in one visual style","price.c2":"Formats for Reels, TikTok and Shorts","price.c3":"Content plan for the period",
@@ -49,7 +56,7 @@ window.I18N = {
     "foot.tag":"Videos that stop the thumb.","foot.privacy":"Privacy policy","viewer.close":"Close"
   },
   msg: {
-    ru:{name:"Напиши имя, хотя бы 2 буквы.",email:"Проверь email: нужен формат name@domain.com.",link:"Ссылка выглядит неверно. Пример: instagram.com/brand",msg:"Расскажи чуть подробнее, хотя бы 10 символов.",ok:"Заявка отправлена. Мы ответим на указанную почту.",fail:"Не получилось отправить. Напиши нам на hello@thumbstop.studio.",sending:"Отправляем…",prefill:"Интересует: ",view:"Смотреть",stop:"Стоп"},
-    en:{name:"Enter your name, at least 2 letters.",email:"Check your email: use name@domain.com.",link:"This link looks wrong. Example: instagram.com/brand",msg:"Tell us a bit more, at least 10 characters.",ok:"Request sent. We'll reply to the email you provided.",fail:"Couldn't send. Email us at hello@thumbstop.studio.",sending:"Sending…",prefill:"Interested in: ",view:"Watch",stop:"Stop"}
+    ru:{name:"Напиши имя, хотя бы 2 буквы.",email:"Проверь email: нужен формат name@domain.com.",link:"Ссылка выглядит неверно. Пример: instagram.com/brand",msg:"Расскажи чуть подробнее, хотя бы 10 символов.",ok:"Заявка отправлена. Мы ответим на указанную почту.",fail:"Не получилось отправить. Напиши нам на hello@thumbstop.studio.",sending:"Отправляем…",noEndpoint:"Отправка пока не подключена. Напиши на hello@thumbstop.studio. Текст заявки сохранён в форме.",prefill:"Интересует: ",view:"Смотреть",stop:"Стоп"},
+    en:{name:"Enter your name, at least 2 letters.",email:"Check your email: use name@domain.com.",link:"This link looks wrong. Example: instagram.com/brand",msg:"Tell us a bit more, at least 10 characters.",ok:"Request sent. We'll reply to the email you provided.",fail:"Couldn't send. Email us at hello@thumbstop.studio.",sending:"Sending…",noEndpoint:"Sending is not connected yet. Email hello@thumbstop.studio. Your message is still in the form.",prefill:"Interested in: ",view:"Watch",stop:"Stop"}
   }
 };
